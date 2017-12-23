@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD27FA311FEEADFB00414187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA301FEEADFB00414187 /* AppDelegate.swift */; };
+		CD27FA361FEEADFB00414187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD27FA341FEEADFB00414187 /* Main.storyboard */; };
+		CD27FA391FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA371FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld */; };
+		CD27FA3B1FEEADFC00414187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD27FA3A1FEEADFC00414187 /* Assets.xcassets */; };
+		CD27FA3E1FEEADFC00414187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD27FA3C1FEEADFC00414187 /* LaunchScreen.storyboard */; };
+		CD27FA491FEEADFC00414187 /* EasyReminderTDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA481FEEADFC00414187 /* EasyReminderTDDTests.swift */; };
+		CD27FA541FEEAE5B00414187 /* ERTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA531FEEAE5B00414187 /* ERTableViewController.swift */; };
+		CD27FA561FEEAEBD00414187 /* UpdateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA551FEEAEBD00414187 /* UpdateReminderViewController.swift */; };
+		CD27FA581FEEAECB00414187 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA571FEEAECB00414187 /* MapViewController.swift */; };
+		CD2E88351FEEB36700B7F879 /* NewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E88341FEEB36700B7F879 /* NewReminderViewController.swift */; };
+		CD2E88381FEEB4E900B7F879 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2E88371FEEB4E900B7F879 /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD27FA451FEEADFC00414187 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD27FA251FEEADFB00414187 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD27FA2C1FEEADFB00414187;
+			remoteInfo = EasyReminderTDD;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD27FA2D1FEEADFB00414187 /* EasyReminderTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyReminderTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD27FA301FEEADFB00414187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD27FA351FEEADFB00414187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD27FA381FEEADFB00414187 /* EasyReminderTDD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyReminderTDD.xcdatamodel; sourceTree = "<group>"; };
+		CD27FA3A1FEEADFC00414187 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD27FA3D1FEEADFC00414187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD27FA3F1FEEADFC00414187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD27FA441FEEADFC00414187 /* EasyReminderTDDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyReminderTDDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD27FA481FEEADFC00414187 /* EasyReminderTDDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyReminderTDDTests.swift; sourceTree = "<group>"; };
+		CD27FA4A1FEEADFC00414187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD27FA531FEEAE5B00414187 /* ERTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERTableViewController.swift; sourceTree = "<group>"; };
+		CD27FA551FEEAEBD00414187 /* UpdateReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReminderViewController.swift; sourceTree = "<group>"; };
+		CD27FA571FEEAECB00414187 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CD2E88341FEEB36700B7F879 /* NewReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderViewController.swift; sourceTree = "<group>"; };
+		CD2E88371FEEB4E900B7F879 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD27FA2A1FEEADFB00414187 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD2E88381FEEB4E900B7F879 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD27FA411FEEADFC00414187 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD27FA241FEEADFB00414187 = {
+			isa = PBXGroup;
+			children = (
+				CD27FA2F1FEEADFB00414187 /* EasyReminderTDD */,
+				CD27FA471FEEADFC00414187 /* EasyReminderTDDTests */,
+				CD27FA2E1FEEADFB00414187 /* Products */,
+				CD2E88361FEEB4E900B7F879 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CD27FA2E1FEEADFB00414187 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD27FA2D1FEEADFB00414187 /* EasyReminderTDD.app */,
+				CD27FA441FEEADFC00414187 /* EasyReminderTDDTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD27FA2F1FEEADFB00414187 /* EasyReminderTDD */ = {
+			isa = PBXGroup;
+			children = (
+				CD27FA531FEEAE5B00414187 /* ERTableViewController.swift */,
+				CD27FA551FEEAEBD00414187 /* UpdateReminderViewController.swift */,
+				CD2E88341FEEB36700B7F879 /* NewReminderViewController.swift */,
+				CD27FA571FEEAECB00414187 /* MapViewController.swift */,
+				CD27FA341FEEADFB00414187 /* Main.storyboard */,
+				CD27FA371FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld */,
+				CD27FA591FEEAED200414187 /* Supporting Files */,
+			);
+			path = EasyReminderTDD;
+			sourceTree = "<group>";
+		};
+		CD27FA471FEEADFC00414187 /* EasyReminderTDDTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD27FA481FEEADFC00414187 /* EasyReminderTDDTests.swift */,
+				CD27FA4A1FEEADFC00414187 /* Info.plist */,
+			);
+			path = EasyReminderTDDTests;
+			sourceTree = "<group>";
+		};
+		CD27FA591FEEAED200414187 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD27FA301FEEADFB00414187 /* AppDelegate.swift */,
+				CD27FA3A1FEEADFC00414187 /* Assets.xcassets */,
+				CD27FA3C1FEEADFC00414187 /* LaunchScreen.storyboard */,
+				CD27FA3F1FEEADFC00414187 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD2E88361FEEB4E900B7F879 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD2E88371FEEB4E900B7F879 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD27FA2C1FEEADFB00414187 /* EasyReminderTDD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD27FA4D1FEEADFC00414187 /* Build configuration list for PBXNativeTarget "EasyReminderTDD" */;
+			buildPhases = (
+				CD27FA291FEEADFB00414187 /* Sources */,
+				CD27FA2A1FEEADFB00414187 /* Frameworks */,
+				CD27FA2B1FEEADFB00414187 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EasyReminderTDD;
+			productName = EasyReminderTDD;
+			productReference = CD27FA2D1FEEADFB00414187 /* EasyReminderTDD.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD27FA431FEEADFC00414187 /* EasyReminderTDDTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD27FA501FEEADFC00414187 /* Build configuration list for PBXNativeTarget "EasyReminderTDDTests" */;
+			buildPhases = (
+				CD27FA401FEEADFC00414187 /* Sources */,
+				CD27FA411FEEADFC00414187 /* Frameworks */,
+				CD27FA421FEEADFC00414187 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD27FA461FEEADFC00414187 /* PBXTargetDependency */,
+			);
+			name = EasyReminderTDDTests;
+			productName = EasyReminderTDDTests;
+			productReference = CD27FA441FEEADFC00414187 /* EasyReminderTDDTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD27FA251FEEADFB00414187 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Mariya;
+				TargetAttributes = {
+					CD27FA2C1FEEADFB00414187 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					CD27FA431FEEADFC00414187 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CD27FA2C1FEEADFB00414187;
+					};
+				};
+			};
+			buildConfigurationList = CD27FA281FEEADFB00414187 /* Build configuration list for PBXProject "EasyReminderTDD" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD27FA241FEEADFB00414187;
+			productRefGroup = CD27FA2E1FEEADFB00414187 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD27FA2C1FEEADFB00414187 /* EasyReminderTDD */,
+				CD27FA431FEEADFC00414187 /* EasyReminderTDDTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD27FA2B1FEEADFB00414187 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD27FA3E1FEEADFC00414187 /* LaunchScreen.storyboard in Resources */,
+				CD27FA3B1FEEADFC00414187 /* Assets.xcassets in Resources */,
+				CD27FA361FEEADFB00414187 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD27FA421FEEADFC00414187 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD27FA291FEEADFB00414187 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD27FA391FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld in Sources */,
+				CD2E88351FEEB36700B7F879 /* NewReminderViewController.swift in Sources */,
+				CD27FA561FEEAEBD00414187 /* UpdateReminderViewController.swift in Sources */,
+				CD27FA311FEEADFB00414187 /* AppDelegate.swift in Sources */,
+				CD27FA581FEEAECB00414187 /* MapViewController.swift in Sources */,
+				CD27FA541FEEAE5B00414187 /* ERTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD27FA401FEEADFC00414187 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD27FA491FEEADFC00414187 /* EasyReminderTDDTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD27FA461FEEADFC00414187 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD27FA2C1FEEADFB00414187 /* EasyReminderTDD */;
+			targetProxy = CD27FA451FEEADFC00414187 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD27FA341FEEADFB00414187 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD27FA351FEEADFB00414187 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CD27FA3C1FEEADFC00414187 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD27FA3D1FEEADFC00414187 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD27FA4B1FEEADFC00414187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD27FA4C1FEEADFC00414187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD27FA4E1FEEADFC00414187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 77PLT8T8S2;
+				INFOPLIST_FILE = "$(SRCROOT)/EasyReminderTDD/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = m.EasyReminderTDD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CD27FA4F1FEEADFC00414187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 77PLT8T8S2;
+				INFOPLIST_FILE = "$(SRCROOT)/EasyReminderTDD/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = m.EasyReminderTDD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CD27FA511FEEADFC00414187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 77PLT8T8S2;
+				INFOPLIST_FILE = EasyReminderTDDTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = m.EasyReminderTDDTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyReminderTDD.app/EasyReminderTDD";
+			};
+			name = Debug;
+		};
+		CD27FA521FEEADFC00414187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 77PLT8T8S2;
+				INFOPLIST_FILE = EasyReminderTDDTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = m.EasyReminderTDDTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyReminderTDD.app/EasyReminderTDD";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD27FA281FEEADFB00414187 /* Build configuration list for PBXProject "EasyReminderTDD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD27FA4B1FEEADFC00414187 /* Debug */,
+				CD27FA4C1FEEADFC00414187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD27FA4D1FEEADFC00414187 /* Build configuration list for PBXNativeTarget "EasyReminderTDD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD27FA4E1FEEADFC00414187 /* Debug */,
+				CD27FA4F1FEEADFC00414187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD27FA501FEEADFC00414187 /* Build configuration list for PBXNativeTarget "EasyReminderTDDTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD27FA511FEEADFC00414187 /* Debug */,
+				CD27FA521FEEADFC00414187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CD27FA371FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CD27FA381FEEADFB00414187 /* EasyReminderTDD.xcdatamodel */,
+			);
+			currentVersion = CD27FA381FEEADFB00414187 /* EasyReminderTDD.xcdatamodel */;
+			path = EasyReminderTDD.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CD27FA251FEEADFB00414187 /* Project object */;
+}
