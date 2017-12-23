@@ -11,6 +11,8 @@ import CoreData
 
 class ERTableViewController: UITableViewController {
     
+    let dateFormatter = DateFormatter()
+    
     var reminders : [NSManagedObject] = []
 
     override func viewDidLoad() {
@@ -28,11 +30,8 @@ class ERTableViewController: UITableViewController {
     func addInitReminder(){
         let testReminder1 = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as NSManagedObject
          let testReminder2 = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as NSManagedObject
-    
-        let datee = NSDate()
-        let dateFormatter = DateFormatter()
+
         dateFormatter.dateFormat = "MM-dd-yyyy"
-        _ = dateFormatter.string(from: datee as Date)
     
         testReminder1.setValue("Title1", forKey: "title")
         testReminder1.setValue(1, forKey: "precedence")
@@ -70,11 +69,14 @@ class ERTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
         let reminder = reminders[indexPath.row]
         cell.textLabel!.text = reminder.value(forKey: "title") as? String
-        cell.detailTextLabel!.text = reminder.value(forKey: "descrip") as? String
+        cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
 
         return cell
     }

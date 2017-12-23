@@ -106,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				CD27FA481FEEADFC00414187 /* EasyReminderTDDTests.swift */,
-				CD27FA4A1FEEADFC00414187 /* Info.plist */,
 				CD2E88451FEEDB0000B7F879 /* ERTableViewControllerTests.swift */,
+				CD27FA4A1FEEADFC00414187 /* Info.plist */,
 			);
 			path = EasyReminderTDDTests;
 			sourceTree = "<group>";
