@@ -123,6 +123,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="535737777.98931301">
                                     <!--2017-12-23 16:02:57 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePickerAction:" destination="54z-o7-j1j" eventType="valueChanged" id="T4a-TE-eLG"/>
+                                </connections>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CIy-0g-9ss">
                                 <rect key="frame" x="16" y="85" width="343" height="30"/>
@@ -143,6 +146,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ijd-EF-0ff">
+                                <rect key="frame" x="139" y="134" width="220" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Precedence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etf-fD-tAh">
                                 <rect key="frame" x="16" y="307" width="102" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -184,6 +194,7 @@
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="FBA-tm-Xff" id="Bhl-Gz-n0y"/>
+                        <outlet property="dateTextField" destination="Ijd-EF-0ff" id="jYg-JZ-Ca2"/>
                         <outlet property="descripTextView" destination="3F6-ci-jsk" id="C9K-YR-toU"/>
                         <outlet property="locationTextField" destination="G2t-ws-iE7" id="Qq7-dP-swI"/>
                         <outlet property="segmentedControl" destination="33p-D1-2AZ" id="lhn-GV-XCg"/>
@@ -215,6 +226,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="535737777.98931301">
                                     <!--2017-12-23 16:02:57 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePickerAction:" destination="qOg-pz-spO" eventType="valueChanged" id="OlP-Fl-Vpt"/>
+                                </connections>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9G-3M-GXi">
                                 <rect key="frame" x="15" y="91" width="343" height="30"/>
@@ -270,6 +284,7 @@
                                     <segment title="!"/>
                                 </segments>
                                 <connections>
+                                    <action selector="changeIndex:" destination="qOg-pz-spO" eventType="valueChanged" id="xew-Si-PDb"/>
                                     <action selector="indexPrecedence:" destination="54z-o7-j1j" eventType="valueChanged" id="Nka-dC-3h8"/>
                                 </connections>
                             </segmentedControl>
@@ -278,10 +293,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Kj-aM-Ib8">
+                                <rect key="frame" x="133" y="135" width="224" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="pEe-wj-iZA"/>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="MwP-bu-u4H" id="L7l-hj-fTK"/>
+                        <outlet property="dateTextField" destination="8Kj-aM-Ib8" id="5bq-YI-MjK"/>
+                        <outlet property="descripTextView" destination="k65-YE-svl" id="yeG-51-1n5"/>
+                        <outlet property="locationTextField" destination="izf-nV-Kdp" id="DZG-cW-a2f"/>
+                        <outlet property="segmentedControl" destination="xbG-oa-3db" id="CTY-m5-bcL"/>
+                        <outlet property="titleTextField" destination="f9G-3M-GXi" id="Vyt-Xq-ge3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWO-4E-v4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

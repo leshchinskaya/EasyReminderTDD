@@ -22,6 +22,15 @@ class NewReminderViewController: UIViewController {
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var descripTextView: UITextView!
+    @IBOutlet weak var dateTextField: UITextField!
+    
+    @IBAction func datePickerAction(_ sender: Any) {
+        
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        var strDate = dateFormatter.string(from: datePicker.date)
+        self.dateTextField.text = strDate
+    }
     
     
     @IBAction func indexPrecedence(_ sender: UISegmentedControl) {
