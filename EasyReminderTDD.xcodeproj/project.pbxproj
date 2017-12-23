@@ -18,6 +18,7 @@
 		CD27FA581FEEAECB00414187 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA571FEEAECB00414187 /* MapViewController.swift */; };
 		CD2E88351FEEB36700B7F879 /* NewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E88341FEEB36700B7F879 /* NewReminderViewController.swift */; };
 		CD2E88381FEEB4E900B7F879 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2E88371FEEB4E900B7F879 /* MapKit.framework */; };
+		CD2E88461FEEDB0000B7F879 /* ERTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E88451FEEDB0000B7F879 /* ERTableViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		CD27FA571FEEAECB00414187 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CD2E88341FEEB36700B7F879 /* NewReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderViewController.swift; sourceTree = "<group>"; };
 		CD2E88371FEEB4E900B7F879 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CD2E88451FEEDB0000B7F879 /* ERTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERTableViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				CD27FA481FEEADFC00414187 /* EasyReminderTDDTests.swift */,
 				CD27FA4A1FEEADFC00414187 /* Info.plist */,
+				CD2E88451FEEDB0000B7F879 /* ERTableViewControllerTests.swift */,
 			);
 			path = EasyReminderTDDTests;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD2E88461FEEDB0000B7F879 /* ERTableViewControllerTests.swift in Sources */,
 				CD27FA491FEEADFC00414187 /* EasyReminderTDDTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
