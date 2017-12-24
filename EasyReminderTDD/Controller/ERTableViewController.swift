@@ -12,11 +12,21 @@ import CoreData
 class ERTableViewController: UITableViewController {
     
     let dateFormatter = DateFormatter()
+    let searchController = UISearchController(searchResultsController: nil)
     
     var reminders : [NSManagedObject] = []
+    var filteredReminders = [AnyObject]()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Reminders"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
         
         addInitReminder()
 
@@ -25,6 +35,13 @@ class ERTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
     }
     
     func addInitReminder(){
@@ -63,7 +80,9 @@ class ERTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if isFiltering() {
+            return filteredReminders.count
+        }
         return reminders.count
     }
 
@@ -129,5 +148,30 @@ class ERTableViewController: UITableViewController {
     
     // MARK: - CoreData
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    // MARK: - Private instance methods
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+       // filteredReminders = reminders.filter({( reminder : NSManagedObject) -> Bool in
+            //return reminder.title.lowercased().contains(searchText.lowercased())
+       // })
+        tableView.reloadData()
+    }
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
 
+}
+
+extension ERTableViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        // TODO
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
 }
