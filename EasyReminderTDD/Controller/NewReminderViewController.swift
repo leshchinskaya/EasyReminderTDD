@@ -11,6 +11,7 @@ import CoreData
 
 class NewReminderViewController: UIViewController {
     
+    let dateFormatter = DateFormatter()
     var newIndexPrec = 0
     var newTitle: String?
     var newDescrip : String?
@@ -25,10 +26,8 @@ class NewReminderViewController: UIViewController {
     @IBOutlet weak var dateTextField: UITextField!
     
     @IBAction func datePickerAction(_ sender: Any) {
-        
-        var dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy"
-        var strDate = dateFormatter.string(from: datePicker.date)
+        let strDate = dateFormatter.string(from: datePicker.date)
         self.dateTextField.text = strDate
     }
     

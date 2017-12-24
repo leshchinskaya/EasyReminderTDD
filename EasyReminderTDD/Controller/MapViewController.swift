@@ -8,13 +8,30 @@
 
 import UIKit
 import CoreData
+import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
+    
+    let initialLocation = CLLocation(latitude: 51.6720400, longitude: 39.1843000)
+    let regionRadius: CLLocationDistance = 1000
+    
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                                  regionRadius, regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        centerMapOnLocation(location: initialLocation)
+        
+        cityLabel.text = "Voronezh"
+        
     }
 
     override func didReceiveMemoryWarning() {
