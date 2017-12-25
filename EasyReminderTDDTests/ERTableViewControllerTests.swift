@@ -7,12 +7,20 @@
 //
 
 import XCTest
+@testable import EasyReminderTDD
 
 class ERTableViewControllerTests: XCTestCase {
     
+    var erTableVC : ERTableViewController!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        erTableVC = storyboard.instantiateViewController(withIdentifier: "ERTableViewController") as! ERTableViewController
+        UIApplication.shared.keyWindow!.rootViewController = erTableVC
+        
+        let _ = erTableVC.view
     }
     
     override func tearDown() {
@@ -21,6 +29,8 @@ class ERTableViewControllerTests: XCTestCase {
     }
 
     func test_DeleteReminder() {
+        
+        
         
     }
     

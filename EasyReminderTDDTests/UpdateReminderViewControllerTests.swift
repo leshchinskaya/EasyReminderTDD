@@ -7,12 +7,20 @@
 //
 
 import XCTest
+@testable import EasyReminderTDD
 
 class UpdateReminderViewControllerTests: XCTestCase {
     
+    var updateReminderVC : UpdateReminderViewController!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        updateReminderVC = storyboard.instantiateViewController(withIdentifier: "UpdateReminderViewController") as! UpdateReminderViewController
+        UIApplication.shared.keyWindow!.rootViewController = updateReminderVC
+        
+        let _ = updateReminderVC.view
     }
     
     override func tearDown() {

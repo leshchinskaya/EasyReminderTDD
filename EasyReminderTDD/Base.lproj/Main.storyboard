@@ -120,7 +120,7 @@
         <!--New Reminder View Controller-->
         <scene sceneID="bJQ-in-xVU">
             <objects>
-                <viewController id="54z-o7-j1j" customClass="NewReminderViewController" customModule="EasyReminderTDD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewReminderViewController" id="54z-o7-j1j" customClass="NewReminderViewController" customModule="EasyReminderTDD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AAj-ob-XpI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,7 +223,7 @@
         <!--Update Reminder View Controller-->
         <scene sceneID="eQ5-rl-LLZ">
             <objects>
-                <viewController id="qOg-pz-spO" customClass="UpdateReminderViewController" customModule="EasyReminderTDD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateReminderViewController" id="qOg-pz-spO" customClass="UpdateReminderViewController" customModule="EasyReminderTDD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ry6-Bg-10e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
