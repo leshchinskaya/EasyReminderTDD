@@ -57,13 +57,21 @@ class NewReminderViewController: UIViewController {
     
     @IBAction func save() {
         
-        if (newTitle==nil) {
+        newTitle = titleTextField.text
+        newDescrip = descripTextView.text
+        newLocation = locationTextField.text
+        newDate = dateFormatter.date(from: dateTextField.text!)
+        
+        if (newTitle=="") {
             f=false
+            print("error: title == nil")
         }
         else {
             f = true
+            
+            
+            print("save new reminder")
         }
-        print("save new reminder")
     }
     
     override func viewDidLoad() {

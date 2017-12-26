@@ -31,12 +31,12 @@ class UpdateReminderViewControllerTests: XCTestCase {
     }
     
     func test_NewReminder(){
-        dateFormatter.dateFormat = "MM-dd-yyyy"
+        //dateFormatter.dateFormat = "MM-dd-yyyy"
         
-        updateReminderVC.newTitle = "Title New"
-        updateReminderVC.newDate = dateFormatter.date(from: "12-10-2017")
-        updateReminderVC.newLocation = "Voronezh"
-        updateReminderVC.newDescrip = "Description New"
+        updateReminderVC.titleTextField.text = "Title New"
+        updateReminderVC.dateTextField.text = "12-10-2017"
+        updateReminderVC.locationTextField.text = "Voronezh"
+        updateReminderVC.descripTextView.text = "Description New"
         updateReminderVC.newIndexPrec = 1
         
         updateReminderVC.save()
@@ -47,12 +47,12 @@ class UpdateReminderViewControllerTests: XCTestCase {
     }
     
     func test_NewReminderWithNilTitle(){
-        dateFormatter.dateFormat = "MM-dd-yyyy"
+        //dateFormatter.dateFormat = "MM-dd-yyyy"
         
-        updateReminderVC.newTitle = nil
-        updateReminderVC.newDate = dateFormatter.date(from: "12-10-2017")
-        updateReminderVC.newLocation = "Voronezh"
-        updateReminderVC.newDescrip = "Description New"
+        updateReminderVC.titleTextField.text = nil
+        updateReminderVC.dateTextField.text = "12-10-2017"
+        updateReminderVC.locationTextField.text = "Voronezh"
+        updateReminderVC.descripTextView.text = "Description New"
         updateReminderVC.newIndexPrec = 1
         
         updateReminderVC.save()
