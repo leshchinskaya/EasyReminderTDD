@@ -17,7 +17,9 @@ class UpdateReminderViewController: UIViewController {
     var newDescrip : String?
     var newDate: Date?
     var newLocation: String?
+    var f = false
 
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var locationTextField: UITextField!
@@ -52,6 +54,15 @@ class UpdateReminderViewController: UIViewController {
         }
     }
     
+    @IBAction func save() {
+        if (newTitle==nil) {
+            f=false
+        }
+        else {
+            f = true
+        }
+        print("save changes")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
