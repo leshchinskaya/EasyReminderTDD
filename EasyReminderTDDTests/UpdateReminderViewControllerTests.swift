@@ -69,6 +69,38 @@ class UpdateReminderViewControllerTests: XCTestCase {
         XCTAssertEqual(newScore, false)
     }
     
+    func test_ChangeIndexMoreThan3OrNo() {
+        updateReminderVC.segmentedControl.selectedSegmentIndex = 0
+        updateReminderVC.changeIndex(updateReminderVC.segmentedControl)
+        let newScore0 = updateReminderVC.newIndexPrec
+        
+        updateReminderVC.segmentedControl.selectedSegmentIndex = 5
+        updateReminderVC.changeIndex(updateReminderVC.segmentedControl)
+        let newScore5 = updateReminderVC.newIndexPrec
+        
+        XCTAssertEqual(newScore0, 0)
+        XCTAssertEqual(newScore5, 0)
+    }
+    
+    func test_ChangeIndex() {
+        
+        updateReminderVC.segmentedControl.selectedSegmentIndex = 1
+        updateReminderVC.changeIndex(updateReminderVC.segmentedControl)
+        let newScore1 = updateReminderVC.newIndexPrec
+        
+        updateReminderVC.segmentedControl.selectedSegmentIndex = 2
+        updateReminderVC.changeIndex(updateReminderVC.segmentedControl)
+        let newScore2 = updateReminderVC.newIndexPrec
+        
+        updateReminderVC.segmentedControl.selectedSegmentIndex = 3
+        updateReminderVC.changeIndex(updateReminderVC.segmentedControl)
+        let newScore3 = updateReminderVC.newIndexPrec
+        
+        XCTAssertEqual(newScore1, 1)
+        XCTAssertEqual(newScore2, 2)
+        XCTAssertEqual(newScore3, 3)
+    }
+    
     func test_SaveButtonHasSaveAction() {
         let saveButton: UIButton = updateReminderVC.saveButton
         guard let actions = saveButton.actions(forTarget: updateReminderVC, forControlEvent: .touchUpInside)

@@ -19,6 +19,7 @@ class NewReminderViewController: UIViewController {
     var newLocation: String?
     
     var f = false
+    var fIndex = false
     
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
@@ -65,6 +66,7 @@ class NewReminderViewController: UIViewController {
         if (newTitle=="") {
             f=false
             print("error: title == nil")
+            
         }
         else {
             f = true

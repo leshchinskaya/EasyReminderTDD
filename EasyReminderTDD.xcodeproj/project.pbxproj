@@ -98,6 +98,7 @@
 				CDDF56431FEEF11C00C32F49 /* Controller */,
 				CDDF56441FEEF12D00C32F49 /* Model */,
 				CD27FA341FEEADFB00414187 /* Main.storyboard */,
+				CD27FA3F1FEEADFC00414187 /* Info.plist */,
 				CD27FA591FEEAED200414187 /* Supporting Files */,
 			);
 			path = EasyReminderTDD;
@@ -121,7 +122,6 @@
 				CD27FA301FEEADFB00414187 /* AppDelegate.swift */,
 				CD27FA3A1FEEADFC00414187 /* Assets.xcassets */,
 				CD27FA3C1FEEADFC00414187 /* LaunchScreen.storyboard */,
-				CD27FA3F1FEEADFC00414187 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -424,7 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77PLT8T8S2;
-				INFOPLIST_FILE = "$(SRCROOT)/EasyReminderTDD/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EasyReminderTDD/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = m.EasyReminderTDD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -439,7 +439,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77PLT8T8S2;
-				INFOPLIST_FILE = "$(SRCROOT)/EasyReminderTDD/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EasyReminderTDD/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = m.EasyReminderTDD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
