@@ -30,6 +30,14 @@ class NewReminderViewControllerTests: XCTestCase {
         super.tearDown()
     }
     
+    func test_HasAllElementsOnView() {
+        XCTAssertNotNil(newReminderVC.titleTextField)
+        XCTAssertNotNil(newReminderVC.locationTextField)
+        XCTAssertNotNil(newReminderVC.segmentedControl)
+        XCTAssertNotNil(newReminderVC.descripTextView)
+        XCTAssertNotNil(newReminderVC.dateTextField)
+    }
+    
     func test_NewReminder(){
         //dateFormatter.dateFormat = "MM-dd-yyyy"
         
@@ -59,6 +67,15 @@ class NewReminderViewControllerTests: XCTestCase {
         
         let newScore = newReminderVC.f
         XCTAssertEqual(newScore, false)
+    }
+    
+    func test_SaveButtonHasSaveAction() {
+        let saveButton: UIButton = newReminderVC.saveButton
+        guard let actions = saveButton.actions(forTarget: newReminderVC, forControlEvent: .touchUpInside)
+            else {
+                XCTFail();
+                return }
+        XCTAssertTrue(actions.contains("save"))
     }
     
 }

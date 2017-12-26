@@ -16,6 +16,8 @@ class ERTableViewController: UITableViewController {
     
     var reminders : [NSManagedObject] = []
     var filteredReminders = [AnyObject]()
+    
+    var f = false
 
     
     override func viewDidLoad() {
@@ -113,7 +115,8 @@ class ERTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            //reminders.remove(at: indexPath.row)
+            f = true
+            reminders.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
         
