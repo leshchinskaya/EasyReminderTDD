@@ -195,6 +195,9 @@
                                 <rect key="frame" x="16" y="565" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save" destination="54z-o7-j1j" eventType="touchUpInside" id="7eg-6g-ti4"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ijd-EF-0ff">
                                 <rect key="frame" x="138" y="198" width="220" height="30"/>
@@ -212,6 +215,7 @@
                         <outlet property="dateTextField" destination="Ijd-EF-0ff" id="jYg-JZ-Ca2"/>
                         <outlet property="descripTextView" destination="3F6-ci-jsk" id="C9K-YR-toU"/>
                         <outlet property="locationTextField" destination="G2t-ws-iE7" id="Qq7-dP-swI"/>
+                        <outlet property="saveButton" destination="ouB-eL-m4S" id="ngh-g4-RLG"/>
                         <outlet property="segmentedControl" destination="33p-D1-2AZ" id="lhn-GV-XCg"/>
                         <outlet property="titleTextField" destination="CIy-0g-9ss" id="L39-mD-mwS"/>
                     </connections>

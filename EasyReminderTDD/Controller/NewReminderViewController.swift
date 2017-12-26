@@ -17,7 +17,10 @@ class NewReminderViewController: UIViewController {
     var newDescrip : String?
     var newDate: Date?
     var newLocation: String?
-
+    
+    var f = false
+    
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var locationTextField: UITextField!
@@ -52,7 +55,17 @@ class NewReminderViewController: UIViewController {
         }
     }
     
-
+    @IBAction func save() {
+        
+        if (newTitle==nil) {
+            f=false
+        }
+        else {
+            f = true
+        }
+        print("save new reminder")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

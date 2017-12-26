@@ -13,6 +13,8 @@ class NewReminderViewControllerTests: XCTestCase {
     
     var newReminderVC : NewReminderViewController!
     
+    let dateFormatter = DateFormatter()
+    
     override func setUp() {
         super.setUp()
         
@@ -28,16 +30,35 @@ class NewReminderViewControllerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_NewReminder(){
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        
+        newReminderVC.newTitle = "Title New"
+        newReminderVC.newDate = dateFormatter.date(from: "12-10-2017")
+        newReminderVC.newLocation = "Voronezh"
+        newReminderVC.newDescrip = "Description New"
+        newReminderVC.newIndexPrec = 1
+
+        newReminderVC.save()
+        
+        let newScore = newReminderVC.f
+        XCTAssertEqual(newScore, true)
+        
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_NewReminderWithNilTitle(){
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        
+        newReminderVC.newTitle = nil
+        newReminderVC.newDate = dateFormatter.date(from: "12-10-2017")
+        newReminderVC.newLocation = "Voronezh"
+        newReminderVC.newDescrip = "Description New"
+        newReminderVC.newIndexPrec = 1
+
+        newReminderVC.save()
+        
+        let newScore = newReminderVC.f
+        XCTAssertEqual(newScore, false)
     }
     
 }
