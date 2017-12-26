@@ -12,12 +12,15 @@ import CoreData
 class UpdateReminderViewController: UIViewController {
     
     let dateFormatter = DateFormatter()
+    var indexOld = 0
     var newIndexPrec = 0
     var newTitle: String?
     var newDescrip : String?
     var newDate: Date?
     var newLocation: String?
     var f = false
+    
+    var reminders = [NSManagedObject]()
 
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!

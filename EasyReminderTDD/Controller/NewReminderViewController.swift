@@ -18,6 +18,8 @@ class NewReminderViewController: UIViewController {
     var newDate: Date?
     var newLocation: String?
     
+    var reminders = [NSManagedObject]()
+    
     var f = false
     var fIndex = false
     
@@ -70,9 +72,19 @@ class NewReminderViewController: UIViewController {
         }
         else {
             f = true
+            let testReminder = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as NSManagedObject
             
+            dateFormatter.dateFormat = "MM-dd-yyyy"
+            
+            testReminder.setValue(newTitle, forKey: "title")
+            testReminder.setValue(newIndexPrec, forKey: "precedence")
+            testReminder.setValue(newLocation, forKey: "location")
+            testReminder.setValue(newDescrip, forKey: "descrip")
+            testReminder.setValue(newDate, forKey: "date")
+            reminders.append(testReminder)
             
             print("save new reminder")
+            print(reminders.count)
         }
     }
     
@@ -97,5 +109,8 @@ class NewReminderViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - CoreData
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 }

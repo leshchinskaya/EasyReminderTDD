@@ -101,6 +101,44 @@ class NewReminderViewControllerTests: XCTestCase {
         XCTAssertEqual(newScore3, 3)
     }
     
+    func test_RemindersValueAfterAddNewReminder(){
+        
+        let valueBefore = newReminderVC.reminders.count
+        
+        newReminderVC.titleTextField.text = "Title New"
+        newReminderVC.dateTextField.text = "12-10-2017"
+        newReminderVC.locationTextField.text = "Voronezh"
+        newReminderVC.descripTextView.text = "Description New"
+        newReminderVC.newIndexPrec = 1
+        
+        newReminderVC.save()
+        
+        let valueAfter = newReminderVC.reminders.count
+        let exp = valueAfter-valueBefore
+        
+        XCTAssertEqual(exp, 1)
+        
+    }
+    
+    func test_RemindersValueIfTitleNil(){
+        
+        let valueBefore = newReminderVC.reminders.count
+        
+        newReminderVC.titleTextField.text = ""
+        newReminderVC.dateTextField.text = "12-10-2017"
+        newReminderVC.locationTextField.text = "Voronezh"
+        newReminderVC.descripTextView.text = "Description New"
+        newReminderVC.newIndexPrec = 1
+        
+        newReminderVC.save()
+        
+        let valueAfter = newReminderVC.reminders.count
+        let exp = valueAfter-valueBefore
+        
+        XCTAssertEqual(exp, 0)
+        
+    }
+    
     
     func test_SaveButtonHasSaveAction() {
         let saveButton: UIButton = newReminderVC.saveButton
