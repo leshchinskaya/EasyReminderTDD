@@ -9,7 +9,13 @@
 import UIKit
 import CoreData
 
+protocol NewReminderViewControllerDelegate: class  {
+    func newReminderViewController(_ newReminderViewController: NewReminderViewController, didAddReminder reminder: Reminder)
+}
+
 class NewReminderViewController: UIViewController {
+    
+    weak var delegate: NewReminderViewControllerDelegate?
     
     let dateFormatter = DateFormatter()
     var newIndexPrec = 0
@@ -18,7 +24,8 @@ class NewReminderViewController: UIViewController {
     var newDate: Date?
     var newLocation: String?
     
-    var reminders = [NSManagedObject]()
+    var reminders = [Reminder]()
+    //var reminder: Reminder?
     
     var f = false
     var fIndex = false
@@ -72,9 +79,10 @@ class NewReminderViewController: UIViewController {
         }
         else {
             f = true
-            let testReminder = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as NSManagedObject
+            let testReminder = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as! Reminder
             
             dateFormatter.dateFormat = "MM-dd-yyyy"
+            
             
             testReminder.setValue(newTitle, forKey: "title")
             testReminder.setValue(newIndexPrec, forKey: "precedence")
@@ -83,10 +91,23 @@ class NewReminderViewController: UIViewController {
             testReminder.setValue(newDate, forKey: "date")
             reminders.append(testReminder)
             
+            /*
+            reminder?.setValue(newTitle, forKey: "title")
+            reminder?.setValue(newIndexPrec, forKey: "precedence")
+            reminder?.setValue(newLocation, forKey: "location")
+            reminder?.setValue(newDescrip, forKey: "descrip")
+            reminder?.setValue(newDate, forKey: "date")
+            */
             print("save new reminder")
             print(reminders.count)
             
+            print(reminders)
+            //print(testReminder)
             
+            //self.delegate?.newReminderViewController(self, didAddReminder: reminder!)
+            self.navigationController?.popViewController(animated: true)
+            //self.itemManager?.addItem(item: item)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     

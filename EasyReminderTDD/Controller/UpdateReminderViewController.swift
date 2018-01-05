@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 
+protocol UpdateReminderViewControllerDelegate: class {
+    func updateReminderViewController(_ updateReminderViewController: UpdateReminderViewController, didEditReminder reminder: Reminder, at indexPath: IndexPath)
+}
+
 class UpdateReminderViewController: UIViewController {
     
     let dateFormatter = DateFormatter()
@@ -20,7 +24,13 @@ class UpdateReminderViewController: UIViewController {
     var newLocation: String?
     var f = false
     
-    var reminders = [NSManagedObject]()
+    
+    weak var delegate: UpdateReminderViewControllerDelegate?
+    
+    var reminder: Reminder?
+    var indexPath: IndexPath?
+    
+    var reminders = [Reminder]()
 
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
@@ -70,14 +80,32 @@ class UpdateReminderViewController: UIViewController {
         }
         else {
             f = true
-            
+            reminder?.title = newTitle
+            reminder?.descrip = newDescrip
+            reminder?.location = newLocation
+            reminder?.date = newDate as! NSDate
+            reminder?.precedence = Int16(newIndexPrec)
             
             print("save changes")
+            
+            guard let reminder = reminder, let indexPath = indexPath else {
+                return
+            }
+            delegate?.updateReminderViewController(self, didEditReminder: reminder, at: indexPath)
+            dismiss(animated: true, completion: nil)
+            navigationController?.popViewController(animated: true)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleTextField.text = reminder?.title
+        descripTextView.text = reminder?.descrip
+        locationTextField.text = reminder?.location
+        dateTextField.text = dateFormatter.string(from: reminder?.date as! Date)
+        segmentedControl.selectedSegmentIndex = 3
+        changeIndex(segmentedControl)
 
         // Do any additional setup after loading the view.
         navigationController?.navigationBar.prefersLargeTitles = false

@@ -14,11 +14,17 @@ class ERTableViewController: UITableViewController {
     let dateFormatter = DateFormatter()
     let searchController = UISearchController(searchResultsController: nil)
     
-    var reminders : [NSManagedObject] = []
+    var reminders : [Reminder] = []
     var filteredReminders = [AnyObject]()
     
     var f = false
 
+    @IBAction func update(_ sender: Any) {
+        
+        tableView.reloadData()
+        reminders.count
+        print(reminders)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +53,8 @@ class ERTableViewController: UITableViewController {
     }
     
     func addInitReminder(){
-        let testReminder1 = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as NSManagedObject
-         let testReminder2 = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as NSManagedObject
+        let testReminder1 = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as! Reminder
+        let testReminder2 = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as! Reminder
 
         dateFormatter.dateFormat = "MM-dd-yyyy"
     
@@ -138,6 +144,10 @@ class ERTableViewController: UITableViewController {
     }
     */
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "updateReminder", sender: indexPath)
+    }
     
     // MARK: - Navigation
 
@@ -146,6 +156,8 @@ class ERTableViewController: UITableViewController {
         if let destVC = segue.destination as? NewReminderViewController, segue.identifier == "addNewReminder" {
             print("addNewReminder")
             destVC.reminders = reminders
+            //destVC.delegate = self as? NewReminderViewControllerDelegate
+            tableView.reloadData()
         }
         if let destVC = segue.destination as? UpdateReminderViewController, segue.identifier == "updateReminder" {
             print ("updateReminder")

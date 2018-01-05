@@ -52,6 +52,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Easy Reminder" id="Kyz-Bf-WbS">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="wUd-ZX-yDH">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JKJ-3b-I58">
+                                <rect key="frame" x="16" y="7" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="update:" destination="xIC-un-4KI" eventType="touchUpInside" id="3d2-vv-BG9"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="AU1-Fd-n9O">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RrL-ZG-3Gb">
                                 <rect key="frame" x="329" y="0.0" width="30" height="44"/>
