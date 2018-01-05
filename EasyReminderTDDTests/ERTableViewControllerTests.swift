@@ -28,8 +28,30 @@ class ERTableViewControllerTests: XCTestCase {
         super.tearDown()
     }
 
-    func test_DeleteReminder() {
-        //erTableVC.tableView(erTableVC.tableView, commit: erTableVC.de, forRowAt: 0)
+    func test_DeleteReminderSuccess() {
+        var indexPath = IndexPath(row: 1, section: 0)
+        erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
+        let newScore1 = erTableVC.f
+        XCTAssertEqual(newScore1, true)
+        
+        indexPath = IndexPath(row: 0, section: 0)
+        erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
+        let newScore2 = erTableVC.f
+        XCTAssertEqual(newScore2, true)
+        
+    }
+    
+    func test_DeleteReminderFailed() {
+        var indexPath = IndexPath(row: -1, section: 0)
+        erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
+        let newScore1 = erTableVC.f
+        
+        XCTAssertEqual(newScore1, false)
+        
+        indexPath = IndexPath(row: 2, section: 0)
+        erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
+        let newScore2 = erTableVC.f
+        XCTAssertEqual(newScore2, false)
     }
     
 }

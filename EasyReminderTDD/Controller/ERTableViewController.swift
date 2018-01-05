@@ -21,8 +21,9 @@ class ERTableViewController: UITableViewController {
 
     @IBAction func update(_ sender: Any) {
         
+        //addInitReminder()
         tableView.reloadData()
-        reminders.count
+        //reminders.count
         print(reminders)
     }
     
@@ -121,9 +122,19 @@ class ERTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            f = true
-            reminders.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            if (indexPath.row >= reminders.count) {
+                print ("error")
+                f = false
+            }
+            else if (indexPath.row < 0) {
+                print("error")
+                f = false
+            }
+            else {
+                f = true
+                reminders.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
         }
         
     }
