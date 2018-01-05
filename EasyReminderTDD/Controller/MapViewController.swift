@@ -32,6 +32,8 @@ class MapViewController: UIViewController {
         
         cityLabel.text = "Voronezh"
         
+        navigationController?.navigationBar.prefersLargeTitles = false
+        
     }
 
     override func didReceiveMemoryWarning() {

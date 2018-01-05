@@ -29,8 +29,7 @@ class ERTableViewControllerTests: XCTestCase {
     }
 
     func test_DeleteReminder() {
-        
-        
+        //erTableVC.tableView(erTableVC.tableView, commit: erTableVC.de, forRowAt: 0)
     }
     
 }

@@ -19,6 +19,8 @@
 		CD2E88351FEEB36700B7F879 /* NewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E88341FEEB36700B7F879 /* NewReminderViewController.swift */; };
 		CD2E88381FEEB4E900B7F879 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2E88371FEEB4E900B7F879 /* MapKit.framework */; };
 		CD2E88461FEEDB0000B7F879 /* ERTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E88451FEEDB0000B7F879 /* ERTableViewControllerTests.swift */; };
+		CD71194A20001BD800073EFC /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD71194820001BD800073EFC /* Reminder+CoreDataClass.swift */; };
+		CD71194B20001BD800073EFC /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD71194920001BD800073EFC /* Reminder+CoreDataProperties.swift */; };
 		CDDF56461FEEFE6000C32F49 /* UpdateReminderViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDF56451FEEFE6000C32F49 /* UpdateReminderViewControllerTests.swift */; };
 		CDDF56481FEEFE7500C32F49 /* NewReminderViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDF56471FEEFE7500C32F49 /* NewReminderViewControllerTests.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		CD2E88341FEEB36700B7F879 /* NewReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderViewController.swift; sourceTree = "<group>"; };
 		CD2E88371FEEB4E900B7F879 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CD2E88451FEEDB0000B7F879 /* ERTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERTableViewControllerTests.swift; sourceTree = "<group>"; };
+		CD71194820001BD800073EFC /* Reminder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CD71194920001BD800073EFC /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CDDF56451FEEFE6000C32F49 /* UpdateReminderViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReminderViewControllerTests.swift; sourceTree = "<group>"; };
 		CDDF56471FEEFE7500C32F49 /* NewReminderViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +152,8 @@
 		CDDF56441FEEF12D00C32F49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD71194820001BD800073EFC /* Reminder+CoreDataClass.swift */,
+				CD71194920001BD800073EFC /* Reminder+CoreDataProperties.swift */,
 				CD27FA371FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld */,
 			);
 			path = Model;
@@ -265,8 +271,10 @@
 				CD2E88351FEEB36700B7F879 /* NewReminderViewController.swift in Sources */,
 				CD27FA561FEEAEBD00414187 /* UpdateReminderViewController.swift in Sources */,
 				CD27FA311FEEADFB00414187 /* AppDelegate.swift in Sources */,
+				CD71194A20001BD800073EFC /* Reminder+CoreDataClass.swift in Sources */,
 				CD27FA581FEEAECB00414187 /* MapViewController.swift in Sources */,
 				CD27FA541FEEAE5B00414187 /* ERTableViewController.swift in Sources */,
+				CD71194B20001BD800073EFC /* Reminder+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

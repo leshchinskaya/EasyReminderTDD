@@ -85,6 +85,8 @@ class NewReminderViewController: UIViewController {
             
             print("save new reminder")
             print(reminders.count)
+            
+            
         }
     }
     
@@ -92,6 +94,7 @@ class NewReminderViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     override func didReceiveMemoryWarning() {
