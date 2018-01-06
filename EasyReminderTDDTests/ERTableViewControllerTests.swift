@@ -27,6 +27,10 @@ class ERTableViewControllerTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+    
+    func test_TableViewExists() {
+        XCTAssertNotNil(erTableVC.tableView)
+    }
 
     func test_DeleteReminderSuccess() {
         var indexPath = IndexPath(row: 1, section: 0)
