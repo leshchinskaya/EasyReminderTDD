@@ -17,21 +17,42 @@ class ERTableViewController: UITableViewController {
     var reminders : [Reminder] = []
     var filteredReminders = [AnyObject]()
     var sortedReminders = [AnyObject]()
+    var closedReminders = [AnyObject]()
     
     var f = false
     var sortedFlag = false
+    var closedFlag = false
+    var kolClosed = 1
+    var kolFiltered = 1
 
-    @IBAction func update(_ sender: Any) {
+    @IBAction func closed(_ sender: UIButton) {
+        kolClosed += 1
+        if (kolClosed % 2 == 0) {
+            print ("closed")
+            closedFlag = true
+            tableView.reloadData()
+        }
+        else {
+            print ("not closed")
+            closedFlag = false
+            tableView.reloadData()
+        }
         
-        //addInitReminder()
-        //tableView.reloadData()
-        //reminders.count
-        //print(reminders)
-        //reminders.sorted(by: { $0.precedence > $1.precedence})
-        sortedReminders = reminders.sorted(by: { $0.precedence < $1.precedence})
-        print (sortedReminders)
-        sortedFlag = true
-        tableView.reloadData()
+    }
+    @IBAction func update(_ sender: Any) {
+        kolFiltered += 1
+        if (kolFiltered % 2 == 0) {
+            print ("filtered")
+            sortedReminders = reminders.sorted(by: { $0.precedence < $1.precedence})
+            print (sortedReminders)
+            sortedFlag = true
+            tableView.reloadData()
+        }
+        else {
+            print ("not filtered")
+            sortedFlag = false
+            tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
@@ -89,12 +110,12 @@ class ERTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+/*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+*/
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering() {
             return filteredReminders.count
@@ -116,6 +137,18 @@ class ERTableViewController: UITableViewController {
             let reminder = sortedReminders[indexPath.row]
             cell.textLabel!.text = reminder.value(forKey: "title") as? String
             cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+        }
+        else if closedFlag {
+            if (closedReminders.count != 0) {
+                let reminder = closedReminders[indexPath.row]
+                cell.textLabel!.text = reminder.value(forKey: "title") as? String
+                cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+            }
+            else {
+                closedFlag = false
+                kolClosed = 1
+                tableView.reloadData()
+            }
         }
         else {
             let reminder = reminders[indexPath.row]
@@ -148,6 +181,7 @@ class ERTableViewController: UITableViewController {
             }
             else {
                 f = true
+                closedReminders.append(reminders[indexPath.row])
                 reminders.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
