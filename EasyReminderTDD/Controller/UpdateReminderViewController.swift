@@ -101,13 +101,15 @@ class UpdateReminderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleTextField.text = reminder?.title
-        descripTextView.text = reminder?.descrip
-        locationTextField.text = reminder?.location
-        dateFormatter.dateFormat = "MM-dd-yyyy"
-        dateTextField.text = dateFormatter.string(from: (reminder?.date)! as Date)
-        let prec : Int = Int((reminder?.precedence)!)
-        segmentedControl.selectedSegmentIndex = prec
+        if (reminder != nil) {
+            titleTextField.text = reminder?.title
+            descripTextView.text = reminder?.descrip
+            locationTextField.text = reminder?.location
+            dateFormatter.dateFormat = "MM-dd-yyyy"
+            dateTextField.text = dateFormatter.string(from: (reminder?.date)! as Date)
+            let prec : Int = Int((reminder?.precedence)!)
+            segmentedControl.selectedSegmentIndex = prec
+        }
         
         // Do any additional setup after loading the view.
         navigationController?.navigationBar.prefersLargeTitles = false

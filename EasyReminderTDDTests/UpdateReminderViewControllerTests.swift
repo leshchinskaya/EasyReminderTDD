@@ -20,6 +20,14 @@ class UpdateReminderViewControllerTests: XCTestCase {
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         updateReminderVC = storyboard.instantiateViewController(withIdentifier: "UpdateReminderViewController") as! UpdateReminderViewController
+        
+        updateReminderVC.reminder?.title = "Test"
+        updateReminderVC.reminder?.descrip = "Test"
+        updateReminderVC.reminder?.location = "Voronezh"
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        updateReminderVC.reminder?.date = dateFormatter.date(from: "10-10-2018")! as NSDate
+        updateReminderVC.reminder?.precedence = 0
+
         UIApplication.shared.keyWindow!.rootViewController = updateReminderVC
         
         let _ = updateReminderVC.view
