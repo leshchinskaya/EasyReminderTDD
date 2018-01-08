@@ -197,9 +197,9 @@ class ERTableViewController: UITableViewController {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-       // filteredReminders = reminders.filter({( reminder : NSManagedObject) -> Bool in
-            //return reminder.title.lowercased().contains(searchText.lowercased())
-       // })
+       filteredReminders = reminders.filter({( reminder : Reminder) -> Bool in
+        return (reminder.title?.lowercased().contains(searchText.lowercased()))!
+        })
         tableView.reloadData()
     }
     
