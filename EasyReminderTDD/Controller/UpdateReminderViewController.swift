@@ -83,7 +83,7 @@ class UpdateReminderViewController: UIViewController {
             reminder?.title = newTitle
             reminder?.descrip = newDescrip
             reminder?.location = newLocation
-            reminder?.date = newDate as! NSDate
+            reminder?.date = newDate! as NSDate
             reminder?.precedence = Int16(newIndexPrec)
             
             print("save changes")
@@ -104,8 +104,11 @@ class UpdateReminderViewController: UIViewController {
         titleTextField.text = reminder?.title
         descripTextView.text = reminder?.descrip
         locationTextField.text = reminder?.location
-        dateTextField.text = dateFormatter.string(from: reminder?.date as! Date)
-
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        dateTextField.text = dateFormatter.string(from: (reminder?.date)! as Date)
+        let prec : Int = Int((reminder?.precedence)!)
+        segmentedControl.selectedSegmentIndex = prec
+        
         // Do any additional setup after loading the view.
         navigationController?.navigationBar.prefersLargeTitles = false
     }
