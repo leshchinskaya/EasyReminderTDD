@@ -166,9 +166,11 @@ class ERTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destVC = segue.destination as? NewReminderViewController, segue.identifier == "addNewReminder" {
             print("addNewReminder")
-            destVC.reminders = reminders
-            //destVC.delegate = self as? NewReminderViewControllerDelegate
-            tableView.reloadData()
+            //destVC.reminders = reminders
+            //let reminder = Reminder()
+            //reminders.append(reminder)
+            destVC.delegate = self
+            //destVC.reminder = reminder
         }
         if let destVC = segue.destination as? UpdateReminderViewController, segue.identifier == "updateReminder" {
             print ("updateReminder")
@@ -199,6 +201,22 @@ class ERTableViewController: UITableViewController {
         return searchController.isActive && !searchBarIsEmpty()
     }
 
+}
+
+extension ERTableViewController: NewReminderViewControllerDelegate {
+    func newReminderViewController(_ newReminderViewController: NewReminderViewController, didAddReminder reminder: Reminder) {
+        //print(reminder.title + " " + reminder.descrip)
+        reminders.append(reminder)
+        tableView.reloadData()
+        
+    }
+}
+
+extension ERTableViewController: UpdateReminderViewControllerDelegate {
+    func updateReminderViewController(_ updateReminderViewController: UpdateReminderViewController, didEditReminder reminder: Reminder, at indexPath: IndexPath) {
+        reminders[indexPath.row] = reminder
+        tableView.reloadData()
+    }
 }
 
 extension ERTableViewController: UISearchResultsUpdating {

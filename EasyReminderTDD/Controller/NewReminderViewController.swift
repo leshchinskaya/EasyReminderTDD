@@ -24,8 +24,8 @@ class NewReminderViewController: UIViewController {
     var newDate: Date?
     var newLocation: String?
     
-    var reminders = [Reminder]()
-    //var reminder: Reminder?
+    //var reminders = [Reminder]()
+    var reminder: Reminder?
     
     var f = false
     var fIndex = false
@@ -89,7 +89,7 @@ class NewReminderViewController: UIViewController {
             testReminder.setValue(newLocation, forKey: "location")
             testReminder.setValue(newDescrip, forKey: "descrip")
             testReminder.setValue(newDate, forKey: "date")
-            reminders.append(testReminder)
+            //reminders.append(testReminder)
             
             /*
             reminder?.setValue(newTitle, forKey: "title")
@@ -98,13 +98,15 @@ class NewReminderViewController: UIViewController {
             reminder?.setValue(newDescrip, forKey: "descrip")
             reminder?.setValue(newDate, forKey: "date")
             */
-            print("save new reminder")
-            print(reminders.count)
+            //reminders.append(reminder!)
             
-            print(reminders)
+            print("save new reminder")
+            print(testReminder)
+            
+            //print(reminders)
             //print(testReminder)
             
-            //self.delegate?.newReminderViewController(self, didAddReminder: reminder!)
+            self.delegate?.newReminderViewController(self, didAddReminder: testReminder)
             self.navigationController?.popViewController(animated: true)
             //self.itemManager?.addItem(item: item)
             self.dismiss(animated: true, completion: nil)
