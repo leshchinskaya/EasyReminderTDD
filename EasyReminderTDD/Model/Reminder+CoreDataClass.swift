@@ -12,5 +12,7 @@ import CoreData
 
 @objc(Reminder)
 public class Reminder: NSManagedObject {
-
+    convenience init() {
+        self.init(entity: CoreDataManager.instance.entityForName(entityName: "Reminder"), insertInto: CoreDataManager.instance.managedObjectContext)
+    }
 }

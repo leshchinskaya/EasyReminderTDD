@@ -16,15 +16,22 @@ class ERTableViewController: UITableViewController {
     
     var reminders : [Reminder] = []
     var filteredReminders = [AnyObject]()
+    var sortedReminders = [AnyObject]()
     
     var f = false
+    var sortedFlag = false
 
     @IBAction func update(_ sender: Any) {
         
         //addInitReminder()
-        tableView.reloadData()
+        //tableView.reloadData()
         //reminders.count
-        print(reminders)
+        //print(reminders)
+        //reminders.sorted(by: { $0.precedence > $1.precedence})
+        sortedReminders = reminders.sorted(by: { $0.precedence < $1.precedence})
+        print (sortedReminders)
+        sortedFlag = true
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -60,7 +67,7 @@ class ERTableViewController: UITableViewController {
         dateFormatter.dateFormat = "MM-dd-yyyy"
     
         testReminder1.setValue("Title1", forKey: "title")
-        testReminder1.setValue(1, forKey: "precedence")
+        testReminder1.setValue(3, forKey: "precedence")
         testReminder1.setValue("Voronezh", forKey: "location")
         testReminder1.setValue("Description1", forKey: "descrip")
         testReminder1.setValue(dateFormatter.date(from: "11-10-2017"), forKey: "date")
@@ -92,6 +99,9 @@ class ERTableViewController: UITableViewController {
         if isFiltering() {
             return filteredReminders.count
         }
+        if sortedFlag {
+            return sortedReminders.count
+        }
         return reminders.count
     }
 
@@ -102,10 +112,16 @@ class ERTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
-        let reminder = reminders[indexPath.row]
-        cell.textLabel!.text = reminder.value(forKey: "title") as? String
-        cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
-
+        if sortedFlag {
+            let reminder = sortedReminders[indexPath.row]
+            cell.textLabel!.text = reminder.value(forKey: "title") as? String
+            cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+        }
+        else {
+            let reminder = reminders[indexPath.row]
+            cell.textLabel!.text = reminder.value(forKey: "title") as? String
+            cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+        }
         return cell
     }
     

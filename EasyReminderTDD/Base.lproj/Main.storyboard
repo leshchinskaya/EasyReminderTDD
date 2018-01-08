@@ -53,7 +53,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JKJ-3b-I58">
                                 <rect key="frame" x="16" y="7" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Update"/>
+                                <state key="normal" title="Filter"/>
                                 <connections>
                                     <action selector="update:" destination="xIC-un-4KI" eventType="touchUpInside" id="3d2-vv-BG9"/>
                                 </connections>
