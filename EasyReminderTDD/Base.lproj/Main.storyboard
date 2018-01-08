@@ -41,9 +41,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="qOg-pz-spO" kind="show" identifier="updateReminder" id="sC0-jB-tzY"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -74,6 +71,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="qOg-pz-spO" kind="show" identifier="updateReminder" id="BWv-IW-3Eu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqV-Ud-PDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

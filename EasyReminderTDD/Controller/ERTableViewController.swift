@@ -174,7 +174,13 @@ class ERTableViewController: UITableViewController {
         }
         if let destVC = segue.destination as? UpdateReminderViewController, segue.identifier == "updateReminder" {
             print ("updateReminder")
-            destVC.reminders = reminders
+            //destVC.reminders = reminders
+            guard
+                let reminder = reminders[(sender as! IndexPath).row] as? Reminder,
+                let indexPath = sender as? IndexPath else { return }
+            destVC.reminder = reminder
+            destVC.indexPath = indexPath
+            destVC.delegate = self
         }
         
     }

@@ -104,7 +104,7 @@ class UpdateReminderViewController: UIViewController {
         titleTextField.text = reminder?.title
         descripTextView.text = reminder?.descrip
         locationTextField.text = reminder?.location
-        //dateTextField.text = dateFormatter.string(from: reminder?.date as! Date)
+        dateTextField.text = dateFormatter.string(from: reminder?.date as! Date)
 
         // Do any additional setup after loading the view.
         navigationController?.navigationBar.prefersLargeTitles = false
