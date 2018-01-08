@@ -24,7 +24,7 @@ class NewReminderViewController: UIViewController {
     var newDate: Date?
     var newLocation: String?
     
-    //var reminders = [Reminder]()
+    var reminders = [Reminder]()
     var reminder: Reminder?
     
     var f = false
@@ -89,7 +89,7 @@ class NewReminderViewController: UIViewController {
             testReminder.setValue(newLocation, forKey: "location")
             testReminder.setValue(newDescrip, forKey: "descrip")
             testReminder.setValue(newDate, forKey: "date")
-            //reminders.append(testReminder)
+            reminders.append(testReminder)
             
             /*
             reminder?.setValue(newTitle, forKey: "title")
