@@ -50,39 +50,41 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Easy Reminder" id="Kyz-Bf-WbS">
-                        <leftBarButtonItems>
-                            <barButtonItem style="plain" id="wUd-ZX-yDH">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JKJ-3b-I58">
-                                    <rect key="frame" x="16" y="7" width="51" height="30"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="wUd-ZX-yDH">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JKJ-3b-I58">
+                                <rect key="frame" x="16" y="7" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Filter"/>
+                                <connections>
+                                    <action selector="update:" destination="xIC-un-4KI" eventType="touchUpInside" id="3d2-vv-BG9"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="AU1-Fd-n9O">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RrL-ZG-3Gb">
+                                    <rect key="frame" x="329" y="0.0" width="30" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Filter"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="Add"/>
                                     <connections>
-                                        <action selector="update:" destination="xIC-un-4KI" eventType="touchUpInside" id="3d2-vv-BG9"/>
+                                        <segue destination="54z-o7-j1j" kind="show" identifier="addNewReminder" id="r9l-qs-rI4"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
                             <barButtonItem style="plain" id="3xY-TE-NfY">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SzW-Vj-5CE">
-                                    <rect key="frame" x="75" y="7" width="48" height="30"/>
+                                    <rect key="frame" x="273" y="7" width="48" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Closed"/>
+                                    <state key="normal" title="Closed">
+                                        <color key="titleColor" red="0.64809342619999999" green="0.038629979969999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
                                     <connections>
                                         <action selector="closed:" destination="xIC-un-4KI" eventType="touchUpInside" id="K2t-ei-2IU"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
-                        </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="AU1-Fd-n9O">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RrL-ZG-3Gb">
-                                <rect key="frame" x="329" y="0.0" width="30" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="+"/>
-                                <connections>
-                                    <segue destination="54z-o7-j1j" kind="show" identifier="addNewReminder" id="r9l-qs-rI4"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <segue destination="qOg-pz-spO" kind="show" identifier="updateReminder" id="BWv-IW-3Eu"/>
