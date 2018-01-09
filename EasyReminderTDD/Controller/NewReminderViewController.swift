@@ -67,15 +67,20 @@ class NewReminderViewController: UIViewController {
     
     @IBAction func save() {
         
+        
         newTitle = titleTextField.text
         newDescrip = descripTextView.text
         newLocation = locationTextField.text
         newDate = dateFormatter.date(from: dateTextField.text!)
         
-        if (newTitle=="") {
+        if (newTitle=="" || newDescrip=="") {
             f=false
-            print("error: title == nil")
+            print("error: title == nil or descrip == nil")
+            let alertController = UIAlertController(title: "Error", message:
+                "Description = nil", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
             
+            self.present(alertController, animated: true, completion: nil)
         }
         else {
             f = true

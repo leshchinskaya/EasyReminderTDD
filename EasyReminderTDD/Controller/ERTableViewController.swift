@@ -11,8 +11,7 @@ import CoreData
 import CheckBox
 
 class ERTableViewController: UITableViewController {
-    
-    @IBOutlet weak var chk: CheckBox!
+    @IBOutlet weak var chkReminder: CheckBox!
     
     let dateFormatter = DateFormatter()
     let searchController = UISearchController(searchResultsController: nil)
@@ -43,6 +42,7 @@ class ERTableViewController: UITableViewController {
         
     }
     @IBAction func update(_ sender: Any) {
+        
         kolFiltered += 1
         if (kolFiltered % 2 == 0) {
             print ("filtered")
@@ -61,9 +61,9 @@ class ERTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chk.onClick = { (checkbox) in
-            print(checkbox.isChecked)
-        }
+        //chk.onClick = { (checkbox) in
+        //    print(checkbox.isChecked)
+       //}
         
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
@@ -91,6 +91,7 @@ class ERTableViewController: UITableViewController {
     func addInitReminder(){
         let testReminder1 = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as! Reminder
         let testReminder2 = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as! Reminder
+         let testReminder3 = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as! Reminder
 
         dateFormatter.dateFormat = "MM-dd-yyyy"
     
@@ -98,15 +99,22 @@ class ERTableViewController: UITableViewController {
         testReminder1.setValue(3, forKey: "precedence")
         testReminder1.setValue("Voronezh", forKey: "location")
         testReminder1.setValue("Description1", forKey: "descrip")
-        testReminder1.setValue(dateFormatter.date(from: "11-10-2017"), forKey: "date")
+        testReminder1.setValue(dateFormatter.date(from: "11-10-2018"), forKey: "date")
         reminders.append(testReminder1)
         
         testReminder2.setValue("Title2", forKey: "title")
         testReminder2.setValue(2, forKey: "precedence")
         testReminder2.setValue("Voronezh", forKey: "location")
         testReminder2.setValue("Description2", forKey: "descrip")
-        testReminder2.setValue(dateFormatter.date(from: "10-10-2017"), forKey: "date")
+        testReminder2.setValue(dateFormatter.date(from: "10-10-2018"), forKey: "date")
         reminders.append(testReminder2)
+        
+        testReminder3.setValue("Title3", forKey: "title")
+        testReminder3.setValue(1, forKey: "precedence")
+        testReminder3.setValue("San-Francisco", forKey: "location")
+        testReminder3.setValue("Description3", forKey: "descrip")
+        testReminder3.setValue(dateFormatter.date(from: "10-11-2019"), forKey: "date")
+        reminders.append(testReminder3)
     
     
     }
@@ -129,6 +137,9 @@ class ERTableViewController: UITableViewController {
         }
         if sortedFlag {
             return sortedReminders.count
+        }
+        if closedFlag {
+            return closedReminders.count
         }
         return reminders.count
     }
@@ -188,7 +199,8 @@ class ERTableViewController: UITableViewController {
             }
             else {
                 f = true
-                closedReminders.append(reminders[indexPath.row])
+                let delReminder = reminders[indexPath.row]
+                closedReminders.append(delReminder)
                 reminders.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
@@ -222,6 +234,8 @@ class ERTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destVC = segue.destination as? NewReminderViewController, segue.identifier == "addNewReminder" {
+            sortedFlag = false
+            closedFlag = false
             print("addNewReminder")
             //destVC.reminders = reminders
             //let reminder = Reminder()
@@ -231,6 +245,7 @@ class ERTableViewController: UITableViewController {
         }
         if let destVC = segue.destination as? UpdateReminderViewController, segue.identifier == "updateReminder" {
             print ("updateReminder")
+            
             //destVC.reminders = reminders
             
             if sortedFlag {
