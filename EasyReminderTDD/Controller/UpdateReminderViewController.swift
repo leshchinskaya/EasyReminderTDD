@@ -112,7 +112,7 @@ class UpdateReminderViewController: UIViewController {
         }
         
         // Do any additional setup after loading the view.
-        navigationController?.navigationBar.prefersLargeTitles = false
+        //navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     override func didReceiveMemoryWarning() {

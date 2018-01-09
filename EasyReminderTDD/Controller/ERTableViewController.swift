@@ -70,6 +70,7 @@ class ERTableViewController: UITableViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Reminders"
         navigationItem.searchController = searchController
+        //navigationItem.titleView = searchController.searchBar
         definesPresentationContext = true
         
         addInitReminder()
@@ -82,7 +83,7 @@ class ERTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.prefersLargeTitles = true
+        //navigationController?.navigationBar.prefersLargeTitles = true
         super.viewWillAppear(animated)
         
         tableView.reloadData()
@@ -95,21 +96,21 @@ class ERTableViewController: UITableViewController {
 
         dateFormatter.dateFormat = "MM-dd-yyyy"
     
-        testReminder1.setValue("Title1", forKey: "title")
+        testReminder1.setValue("title one", forKey: "title")
         testReminder1.setValue(3, forKey: "precedence")
         testReminder1.setValue("Voronezh", forKey: "location")
         testReminder1.setValue("Description1", forKey: "descrip")
         testReminder1.setValue(dateFormatter.date(from: "11-10-2018"), forKey: "date")
         reminders.append(testReminder1)
         
-        testReminder2.setValue("Title2", forKey: "title")
+        testReminder2.setValue("title two", forKey: "title")
         testReminder2.setValue(2, forKey: "precedence")
         testReminder2.setValue("Voronezh", forKey: "location")
         testReminder2.setValue("Description2", forKey: "descrip")
         testReminder2.setValue(dateFormatter.date(from: "10-10-2018"), forKey: "date")
         reminders.append(testReminder2)
         
-        testReminder3.setValue("Title3", forKey: "title")
+        testReminder3.setValue("title three", forKey: "title")
         testReminder3.setValue(1, forKey: "precedence")
         testReminder3.setValue("San-Francisco", forKey: "location")
         testReminder3.setValue("Description3", forKey: "descrip")
@@ -151,6 +152,12 @@ class ERTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
+        if isFiltering() {
+            let reminder = filteredReminders[indexPath.row]
+            cell.textLabel!.text = reminder.value(forKey: "title") as? String
+            cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+            
+        } else
         if sortedFlag {
             let reminder = sortedReminders[indexPath.row]
             cell.textLabel!.text = reminder.value(forKey: "title") as? String
@@ -288,7 +295,11 @@ class ERTableViewController: UITableViewController {
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
        filteredReminders = reminders.filter({( reminder : Reminder) -> Bool in
+        //print(filteredReminders)
         return (reminder.title?.lowercased().contains(searchText.lowercased()))!
+        //let title = reminder.title! as String
+        //return reminder.title.ranngeOfString(searchText)
+        
         })
         tableView.reloadData()
     }

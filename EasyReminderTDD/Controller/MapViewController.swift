@@ -34,7 +34,7 @@ class MapViewController: UIViewController {
         //cityLabel.text = "Voronezh"
         cityLabel.text = location
         
-        navigationController?.navigationBar.prefersLargeTitles = false
+        //navigationController?.navigationBar.prefersLargeTitles = false
         
     }
 

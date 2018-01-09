@@ -67,7 +67,6 @@ class NewReminderViewController: UIViewController {
     
     @IBAction func save() {
         
-        
         newTitle = titleTextField.text
         newDescrip = descripTextView.text
         newLocation = locationTextField.text
@@ -122,12 +121,17 @@ class NewReminderViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        navigationController?.navigationBar.prefersLargeTitles = false
+        //navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        save()
     }
     
 

@@ -52,7 +52,7 @@ class ERTableViewControllerTests: XCTestCase {
         
         XCTAssertEqual(newScore1, false)
         
-        indexPath = IndexPath(row: 2, section: 0)
+        indexPath = IndexPath(row: 3, section: 0)
         erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
         let newScore2 = erTableVC.f
         XCTAssertEqual(newScore2, false)
