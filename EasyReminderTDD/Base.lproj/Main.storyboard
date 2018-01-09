@@ -18,6 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="xqn-Zy-275" customClass="CheckBox" customModule="CheckBox">
+                            <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                    <color key="value" red="0.30369014893794077" green="0.48384876943005184" blue="0.24038064974211645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="unSelectedColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="markWidth">
+                                    <real key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="dimensions">
+                                    <real key="value" value="30"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="check"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                    <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="GDK-fU-iBt" detailTextLabel="YsX-fW-Sp3" style="IBUITableViewCellStyleSubtitle" id="1cx-lO-of0">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -49,6 +78,7 @@
                             <outlet property="delegate" destination="xIC-un-4KI" id="LBe-dd-dfc"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Easy Reminder" id="Kyz-Bf-WbS">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="wUd-ZX-yDH">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JKJ-3b-I58">
@@ -72,25 +102,35 @@
                                     </connections>
                                 </button>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="3xY-TE-NfY">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SzW-Vj-5CE">
+                            <barButtonItem style="plain" id="MDN-ll-nar">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aA0-gG-Qo2">
                                     <rect key="frame" x="273" y="7" width="48" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Closed">
-                                        <color key="titleColor" red="0.64809342619999999" green="0.038629979969999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
+                                    <state key="normal" title="Closed"/>
                                     <connections>
-                                        <action selector="closed:" destination="xIC-un-4KI" eventType="touchUpInside" id="K2t-ei-2IU"/>
+                                        <action selector="closed:" destination="xIC-un-4KI" eventType="touchUpInside" id="YIX-UU-wAn"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="chk" destination="xqn-Zy-275" id="UjX-0d-Kma"/>
                         <segue destination="qOg-pz-spO" kind="show" identifier="updateReminder" id="BWv-IW-3Eu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqV-Ud-PDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AIl-6i-4xJ">
+                    <rect key="frame" x="0.0" y="0.0" width="292" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Closed">
+                        <color key="titleColor" red="0.64809342619999999" green="0.038629979969999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="closed:" destination="xIC-un-4KI" eventType="touchUpInside" id="b4Z-d9-GrR"/>
+                    </connections>
+                </button>
             </objects>
             <point key="canvasLocation" x="-449" y="-306"/>
         </scene>

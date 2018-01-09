@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreData
+import CheckBox
 
 class ERTableViewController: UITableViewController {
+    
+    @IBOutlet weak var chk: CheckBox!
     
     let dateFormatter = DateFormatter()
     let searchController = UISearchController(searchResultsController: nil)
@@ -57,6 +60,10 @@ class ERTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        chk.onClick = { (checkbox) in
+            print(checkbox.isChecked)
+        }
         
         // Setup the Search Controller
         searchController.searchResultsUpdater = self

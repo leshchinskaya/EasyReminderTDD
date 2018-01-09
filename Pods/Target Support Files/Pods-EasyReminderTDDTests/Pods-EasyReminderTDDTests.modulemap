@@ -1,0 +1,6 @@
+framework module Pods_EasyReminderTDDTests {
+  umbrella header "Pods-EasyReminderTDDTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
