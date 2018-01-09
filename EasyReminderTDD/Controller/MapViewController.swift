@@ -15,6 +15,7 @@ class MapViewController: UIViewController {
     
     let initialLocation = CLLocation(latitude: 51.6720400, longitude: 39.1843000)
     let regionRadius: CLLocationDistance = 1000
+    var location: String = ""
     
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -30,7 +31,8 @@ class MapViewController: UIViewController {
         
         centerMapOnLocation(location: initialLocation)
         
-        cityLabel.text = "Voronezh"
+        //cityLabel.text = "Voronezh"
+        cityLabel.text = location
         
         navigationController?.navigationBar.prefersLargeTitles = false
         
