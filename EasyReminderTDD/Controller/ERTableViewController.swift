@@ -26,6 +26,7 @@ class ERTableViewController: UITableViewController {
     var kolClosed = 1
     var kolFiltered = 1
     
+    
     @IBAction func chkReminder(_ sender: Any) {
         print("CheckBox")
         let alertController = UIAlertController(title: "Checked", message:
@@ -165,24 +166,34 @@ class ERTableViewController: UITableViewController {
 
         dateFormatter.dateFormat = "MM-dd-yyyy"
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CustomTableViewCell
         
         if isFiltering() {
             let reminder = filteredReminders[indexPath.row]
-            cell.textLabel!.text = reminder.value(forKey: "title") as? String
-            cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+            
+            cell.titleLabel.text = reminder.value(forKey: "title") as? String
+            cell.dateLabel.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+            
+            //cell.textLabel!.text = reminder.value(forKey: "title") as? String
+            //cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
             
         } else
         if sortedFlag {
             let reminder = sortedReminders[indexPath.row]
-            cell.textLabel!.text = reminder.value(forKey: "title") as? String
-            cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+            cell.titleLabel.text = reminder.value(forKey: "title") as? String
+            cell.dateLabel.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+            
+            //cell.textLabel!.text = reminder.value(forKey: "title") as? String
+            //cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
         }
         else if closedFlag {
             if (closedReminders.count != 0) {
                 let reminder = closedReminders[indexPath.row]
-                cell.textLabel!.text = reminder.value(forKey: "title") as? String
-                cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+                cell.titleLabel.text = reminder.value(forKey: "title") as? String
+                cell.dateLabel.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+                
+                //cell.textLabel!.text = reminder.value(forKey: "title") as? String
+               //cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
             }
             else {
                 closedFlag = false
@@ -192,9 +203,11 @@ class ERTableViewController: UITableViewController {
         }
         else {
             let reminder = reminders[indexPath.row]
-            cell.textLabel!.text = reminder.value(forKey: "title") as? String
+            cell.titleLabel.text = reminder.value(forKey: "title") as? String
+            cell.dateLabel.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+            //cell.textLabel!.text = reminder.value(forKey: "title") as? String
             //cell.textLabel!.text = String(describing: reminder.value(forKey: "done"))
-            cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+            //cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
         }
         return cell
     }

@@ -10,6 +10,13 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBAction func checkChange(_ sender: Any) {
+        print("Check")
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
