@@ -216,6 +216,10 @@ class ERTableViewController: UITableViewController {
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if  (sortedFlag || closedFlag) {
+            f = false
+            print ("error")
+        } else
         if editingStyle == .delete {
             if (indexPath.row >= reminders.count) {
                 print ("error")

@@ -58,4 +58,34 @@ class ERTableViewControllerTests: XCTestCase {
         XCTAssertEqual(newScore2, false)
     }
     
+    func test_SortedOrClosedFlagTrue() {
+        erTableVC.sortedFlag = true
+        erTableVC.closedFlag = false
+        var indexPath = IndexPath(row: 0, section: 0)
+        erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
+        let newScore1 = erTableVC.f
+        XCTAssertEqual(newScore1, false)
+        
+        erTableVC.sortedFlag = false
+        erTableVC.closedFlag = true
+        erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
+        let newScore2 = erTableVC.f
+        XCTAssertEqual(newScore2, false)
+        
+        erTableVC.sortedFlag = true
+        erTableVC.closedFlag = true
+        erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
+        let newScore3 = erTableVC.f
+        XCTAssertEqual(newScore3, false)
+    }
+    
+    func test_SortedAndClosedFlagFalse() {
+        erTableVC.sortedFlag = false
+        erTableVC.closedFlag = false
+        var indexPath = IndexPath(row: 0, section: 0)
+        erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
+        let newScore = erTableVC.f
+        XCTAssertEqual(newScore, true)
+    }
+    
 }

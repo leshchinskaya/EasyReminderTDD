@@ -138,15 +138,4 @@ class NewReminderViewControllerTests: XCTestCase {
         XCTAssertEqual(exp, 0)
         
     }
-    
-    
-    func test_SaveButtonHasSaveAction() {
-        let saveButton: UIButton = newReminderVC.saveButton
-        guard let actions = saveButton.actions(forTarget: newReminderVC, forControlEvent: .touchUpInside)
-            else {
-                XCTFail();
-                return }
-        XCTAssertTrue(actions.contains("save"))
-    }
-    
 }
