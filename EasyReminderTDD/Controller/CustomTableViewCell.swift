@@ -13,13 +13,24 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    var check = 0
+    var kolCheck = 1
+    
     @IBAction func checkChange(_ sender: Any) {
         print("Check")
+        kolCheck += 1
+        if (kolCheck % 2 == 0) {
+            check = 1
+            
+        } else {
+            check = 0
+        }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        //var cell =
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

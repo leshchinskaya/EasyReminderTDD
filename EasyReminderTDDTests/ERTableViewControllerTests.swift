@@ -34,11 +34,13 @@ class ERTableViewControllerTests: XCTestCase {
 
     func test_DeleteReminderSuccess() {
         var indexPath = IndexPath(row: 1, section: 0)
+        erTableVC.deletedReminders[indexPath.row] = 1
         erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
         let newScore1 = erTableVC.f
         XCTAssertEqual(newScore1, true)
         
         indexPath = IndexPath(row: 0, section: 0)
+        erTableVC.deletedReminders[indexPath.row] = 0
         erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
         let newScore2 = erTableVC.f
         XCTAssertEqual(newScore2, true)
@@ -83,9 +85,56 @@ class ERTableViewControllerTests: XCTestCase {
         erTableVC.sortedFlag = false
         erTableVC.closedFlag = false
         var indexPath = IndexPath(row: 0, section: 0)
+        erTableVC.deletedReminders[indexPath.row] = 1
         erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
         let newScore = erTableVC.f
         XCTAssertEqual(newScore, true)
+    }
+    
+    func test_DeleteTrueWithAddToClosedReminders(){
+        var indexPath = IndexPath(row: 0, section: 0)
+        erTableVC.deletedReminders[indexPath.row] = 1
+        erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
+        let newScore = erTableVC.f
+        XCTAssertEqual(newScore, true)
+    }
+    
+    func test_DeleteTrueWithoutAddToClosedReminder(){
+        var indexPath = IndexPath(row: 0, section: 0)
+        erTableVC.deletedReminders[indexPath.row] = 0
+        erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
+        let newScore = erTableVC.f
+        XCTAssertEqual(newScore, true)
+    }
+    
+    func test_AddToClosedReminders() {
+        erTableVC.sortedFlag = false
+        erTableVC.closedFlag = false
+        var indexPath = IndexPath(row: 0, section: 0)
+        let sizeBefore = erTableVC.closedReminders.count
+        erTableVC.deletedReminders[indexPath.row] = 1
+        erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
+        let newScore = erTableVC.f
+        XCTAssertEqual(newScore, true)
+        
+        let sizeAfter = erTableVC.closedReminders.count
+        
+        XCTAssertEqual(sizeAfter-sizeBefore, 1)
+    }
+    
+    func test_NotAddToClosedReminders() {
+        erTableVC.sortedFlag = false
+        erTableVC.closedFlag = false
+        var indexPath = IndexPath(row: 0, section: 0)
+        let sizeBefore = erTableVC.closedReminders.count
+        erTableVC.deletedReminders[indexPath.row] = 0
+        erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
+        let newScore = erTableVC.f
+        XCTAssertEqual(newScore, true)
+        
+        let sizeAfter = erTableVC.closedReminders.count
+        
+        XCTAssertEqual(sizeAfter, sizeBefore)
     }
     
 }

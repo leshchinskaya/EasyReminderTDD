@@ -19,6 +19,7 @@ class ERTableViewController: UITableViewController {
     var filteredReminders = [AnyObject]()
     var sortedReminders = [AnyObject]()
     var closedReminders = [AnyObject]()
+    var deletedReminders = [Int]()
     
     var f = false
     var sortedFlag = false
@@ -26,7 +27,7 @@ class ERTableViewController: UITableViewController {
     var kolClosed = 1
     var kolFiltered = 1
     
-    
+    /*
     @IBAction func chkReminder(_ sender: Any) {
         print("CheckBox")
         let alertController = UIAlertController(title: "Checked", message:
@@ -36,7 +37,8 @@ class ERTableViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil)
         
     }
-
+     */
+    
     @IBAction func closed(_ sender: UIButton) {
         kolClosed += 1
         if (kolClosed % 2 == 0) {
@@ -71,9 +73,11 @@ class ERTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        deletedReminders = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         //chk.onClick = { (checkbox) in
         //    print(checkbox.isChecked)
        //}
+        
         
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
@@ -160,7 +164,7 @@ class ERTableViewController: UITableViewController {
         }
         return reminders.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
@@ -205,6 +209,15 @@ class ERTableViewController: UITableViewController {
             let reminder = reminders[indexPath.row]
             cell.titleLabel.text = reminder.value(forKey: "title") as? String
             cell.dateLabel.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+            
+            if (cell.check == 1)
+            {
+                deletedReminders[indexPath.row] = 1
+            }
+            else {
+                deletedReminders[indexPath.row] = 0
+                
+            }
             //cell.textLabel!.text = reminder.value(forKey: "title") as? String
             //cell.textLabel!.text = String(describing: reminder.value(forKey: "done"))
             //cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
@@ -212,7 +225,7 @@ class ERTableViewController: UITableViewController {
         return cell
     }
     
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -238,11 +251,18 @@ class ERTableViewController: UITableViewController {
                 f = false
             }
             else {
-                f = true
-                let delReminder = reminders[indexPath.row]
-                closedReminders.append(delReminder)
-                reminders.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)
+                if (deletedReminders[indexPath.row] == 1) {
+                    f = true
+                    let delReminder = reminders[indexPath.row]
+                    closedReminders.append(delReminder)
+                    reminders.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+                else {
+                    f = true
+                    reminders.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
             }
         }
         
