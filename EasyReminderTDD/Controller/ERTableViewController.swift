@@ -21,7 +21,7 @@ class ERTableViewController: UITableViewController {
     var closedReminders = [AnyObject]()
     var deletedReminders = [Int]()
     
-    var f = false
+    var deleteFlag = false
     var sortedFlag = false
     var closedFlag = false
     var kolClosed = 1
@@ -119,18 +119,18 @@ class ERTableViewController: UITableViewController {
         testReminder1.setValue(0, forKey: "done")
         reminders.append(testReminder1)
         
-        testReminder2.setValue("title two", forKey: "title")
+        testReminder2.setValue("купить хлеба", forKey: "title")
         testReminder2.setValue(2, forKey: "precedence")
         testReminder2.setValue("Voronezh", forKey: "location")
-        testReminder2.setValue("Description2", forKey: "descrip")
+        testReminder2.setValue("черный, нарезной", forKey: "descrip")
         testReminder2.setValue(dateFormatter.date(from: "10-10-2018"), forKey: "date")
         testReminder2.setValue(0, forKey: "done")
         reminders.append(testReminder2)
         
-        testReminder3.setValue("title three", forKey: "title")
+        testReminder3.setValue("смета", forKey: "title")
         testReminder3.setValue(1, forKey: "precedence")
         testReminder3.setValue("San-Francisco", forKey: "location")
-        testReminder3.setValue("Description3", forKey: "descrip")
+        testReminder3.setValue("по К5, обязательно до 15 января", forKey: "descrip")
         testReminder3.setValue(dateFormatter.date(from: "10-11-2019"), forKey: "date")
         testReminder3.setValue(0, forKey: "done")
         reminders.append(testReminder3)
@@ -144,6 +144,7 @@ class ERTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 
     // MARK: - Table view data source
 /*
@@ -213,6 +214,14 @@ class ERTableViewController: UITableViewController {
             if (cell.check == 1)
             {
                 deletedReminders[indexPath.row] = 1
+                deleteFlag = true
+                let delReminder = reminders[indexPath.row]
+                closedReminders.append(delReminder)
+                reminders.remove(at: indexPath.row)
+                tableView.reloadData()
+                cell.check = 0
+                cell.chk.isChecked = false
+                //cell.check = 0
             }
             else {
                 deletedReminders[indexPath.row] = 0
@@ -238,28 +247,28 @@ class ERTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if  (sortedFlag || closedFlag) {
-            f = false
+            deleteFlag = false
             print ("error")
         } else
         if editingStyle == .delete {
             if (indexPath.row >= reminders.count) {
                 print ("error")
-                f = false
+                deleteFlag = false
             }
             else if (indexPath.row < 0) {
                 print("error")
-                f = false
+                deleteFlag = false
             }
             else {
                 if (deletedReminders[indexPath.row] == 1) {
-                    f = true
+                    deleteFlag = true
                     let delReminder = reminders[indexPath.row]
                     closedReminders.append(delReminder)
                     reminders.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
                 }
                 else {
-                    f = true
+                    deleteFlag = true
                     reminders.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
                 }

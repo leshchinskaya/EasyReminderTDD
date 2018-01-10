@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CheckBox
 
 class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var chk: CheckBox!
     
     var check = 0
     var kolCheck = 1
@@ -21,16 +23,19 @@ class CustomTableViewCell: UITableViewCell {
         kolCheck += 1
         if (kolCheck % 2 == 0) {
             check = 1
-            
+            chk.isChecked = true
         } else {
             check = 0
+            chk.isChecked = false
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        //var cell =
+        check = 0
+        kolCheck = 1
+        chk.isChecked = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

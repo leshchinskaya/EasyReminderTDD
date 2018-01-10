@@ -83,6 +83,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="chk" destination="iY5-EM-gwy" id="vjf-2t-XmE"/>
                                     <outlet property="dateLabel" destination="XHa-S5-HK0" id="ecP-Jl-AEp"/>
                                     <outlet property="titleLabel" destination="lI5-u0-3pk" id="cVQ-7c-sgb"/>
                                 </connections>
