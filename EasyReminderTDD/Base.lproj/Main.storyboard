@@ -253,14 +253,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouB-eL-m4S">
-                                <rect key="frame" x="16" y="497" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="save" destination="54z-o7-j1j" eventType="touchUpInside" id="7eg-6g-ti4"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ijd-EF-0ff">
                                 <rect key="frame" x="138" y="130" width="220" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -277,14 +269,13 @@
                         <outlet property="dateTextField" destination="Ijd-EF-0ff" id="jYg-JZ-Ca2"/>
                         <outlet property="descripTextView" destination="3F6-ci-jsk" id="C9K-YR-toU"/>
                         <outlet property="locationTextField" destination="G2t-ws-iE7" id="Qq7-dP-swI"/>
-                        <outlet property="saveButton" destination="ouB-eL-m4S" id="ngh-g4-RLG"/>
                         <outlet property="segmentedControl" destination="33p-D1-2AZ" id="lhn-GV-XCg"/>
                         <outlet property="titleTextField" destination="CIy-0g-9ss" id="L39-mD-mwS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0M5-hg-DOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="496.80000000000001" y="-306.29685157421289"/>
+            <point key="canvasLocation" x="354" y="-306"/>
         </scene>
         <!--Update Reminder View Controller-->
         <scene sceneID="eQ5-rl-LLZ">

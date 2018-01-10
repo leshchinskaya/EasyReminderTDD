@@ -227,6 +227,7 @@ class ERTableViewController: UITableViewController {
             }
             else {
                 f = true
+                kolChecked = 1
                 let delReminder = reminders[indexPath.row]
                 closedReminders.append(delReminder)
                 reminders.remove(at: indexPath.row)
