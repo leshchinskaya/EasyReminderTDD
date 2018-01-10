@@ -120,6 +120,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="filterButton" destination="JKJ-3b-I58" id="gmf-Bb-gff"/>
+                        <outlet property="showClosedButton" destination="U0R-DI-bik" id="HOM-Ex-X36"/>
                         <segue destination="qOg-pz-spO" kind="show" identifier="updateReminder" id="BWv-IW-3Eu"/>
                     </connections>
                 </tableViewController>

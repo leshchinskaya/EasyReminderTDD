@@ -12,6 +12,9 @@ import CheckBox
 
 class ERTableViewController: UITableViewController {
     
+    @IBOutlet weak var showClosedButton: UIButton!
+    @IBOutlet weak var filterButton: UIButton!
+    
     let dateFormatter = DateFormatter()
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -40,32 +43,37 @@ class ERTableViewController: UITableViewController {
      */
     
     @IBAction func closed(_ sender: UIButton) {
+        tableView.reloadData()
         kolClosed += 1
         if (kolClosed % 2 == 0) {
             print ("closed")
             closedFlag = true
+            showClosedButton.setTitleColor(.green, for: .normal)
             tableView.reloadData()
         }
         else {
             print ("not closed")
             closedFlag = false
+            showClosedButton.setTitleColor(.red, for: .normal)
             tableView.reloadData()
         }
         
     }
     @IBAction func update(_ sender: Any) {
-        
+        tableView.reloadData()
         kolFiltered += 1
         if (kolFiltered % 2 == 0) {
             print ("filtered")
             sortedReminders = reminders.sorted(by: { $0.precedence < $1.precedence})
             print (sortedReminders)
             sortedFlag = true
+            filterButton.setTitleColor(.green, for: .normal)
             tableView.reloadData()
         }
         else {
             print ("not filtered")
             sortedFlag = false
+            filterButton.setTitleColor(.red, for: .normal)
             tableView.reloadData()
         }
     }
@@ -78,7 +86,8 @@ class ERTableViewController: UITableViewController {
         //    print(checkbox.isChecked)
        //}
         
-        
+        filterButton.setTitleColor(.red, for: .normal)
+        showClosedButton.setTitleColor(.red, for: .normal)
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -121,7 +130,7 @@ class ERTableViewController: UITableViewController {
         
         testReminder2.setValue("купить хлеба", forKey: "title")
         testReminder2.setValue(2, forKey: "precedence")
-        testReminder2.setValue("Voronezh", forKey: "location")
+        testReminder2.setValue("Voronezh, Lizyukov Street, 75", forKey: "location")
         testReminder2.setValue("черный, нарезной", forKey: "descrip")
         testReminder2.setValue(dateFormatter.date(from: "10-10-2018"), forKey: "date")
         testReminder2.setValue(0, forKey: "done")
@@ -129,7 +138,7 @@ class ERTableViewController: UITableViewController {
         
         testReminder3.setValue("смета", forKey: "title")
         testReminder3.setValue(1, forKey: "precedence")
-        testReminder3.setValue("San-Francisco", forKey: "location")
+        testReminder3.setValue("Voronezh, Lizyukov Street, 79", forKey: "location")
         testReminder3.setValue("по К5, обязательно до 15 января", forKey: "descrip")
         testReminder3.setValue(dateFormatter.date(from: "10-11-2019"), forKey: "date")
         testReminder3.setValue(0, forKey: "done")
@@ -196,6 +205,7 @@ class ERTableViewController: UITableViewController {
                 let reminder = closedReminders[indexPath.row]
                 cell.titleLabel.text = reminder.value(forKey: "title") as? String
                 cell.dateLabel.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+                cell.chk.isHidden = true
                 
                 //cell.textLabel!.text = reminder.value(forKey: "title") as? String
                //cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
@@ -210,6 +220,7 @@ class ERTableViewController: UITableViewController {
             let reminder = reminders[indexPath.row]
             cell.titleLabel.text = reminder.value(forKey: "title") as? String
             cell.dateLabel.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+            cell.chk.isHidden = false
             
             if (cell.check == 1)
             {
@@ -225,7 +236,6 @@ class ERTableViewController: UITableViewController {
             }
             else {
                 deletedReminders[indexPath.row] = 0
-                
             }
             //cell.textLabel!.text = reminder.value(forKey: "title") as? String
             //cell.textLabel!.text = String(describing: reminder.value(forKey: "done"))

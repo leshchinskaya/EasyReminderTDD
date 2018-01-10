@@ -74,7 +74,7 @@ class UpdateReminderViewController: UIViewController {
         newLocation = locationTextField.text
         newDate = dateFormatter.date(from: dateTextField.text!)
         
-        if (newTitle=="") {
+        if newTitle == "" {
             f=false
             print("error: title == nil")
         }
