@@ -11,7 +11,6 @@ import CoreData
 import CheckBox
 
 class ERTableViewController: UITableViewController {
-    @IBOutlet weak var chkReminder: CheckBox!
     
     let dateFormatter = DateFormatter()
     let searchController = UISearchController(searchResultsController: nil)
@@ -26,6 +25,27 @@ class ERTableViewController: UITableViewController {
     var closedFlag = false
     var kolClosed = 1
     var kolFiltered = 1
+    var kolChecked = 1
+    
+    @IBAction func chkReminder(_ sender: Any) {
+        print("CheckBox")
+        kolChecked += 1
+        if (kolChecked % 2 == 0) {
+            let alertController = UIAlertController(title: "Reminder Checked", message:
+                "Можете удалить напоминание", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
+        
+            self.present(alertController, animated: true, completion: nil)
+        } else
+        {
+            let alertController = UIAlertController(title: "Reminder Unchecked", message:
+                "Операция отменена", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+    }
 
     @IBAction func closed(_ sender: UIButton) {
         kolClosed += 1
@@ -71,6 +91,7 @@ class ERTableViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search Reminders"
         navigationItem.searchController = searchController
         //navigationItem.titleView = searchController.searchBar
+        //navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
         
         addInitReminder()
