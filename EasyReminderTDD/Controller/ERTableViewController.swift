@@ -25,25 +25,14 @@ class ERTableViewController: UITableViewController {
     var closedFlag = false
     var kolClosed = 1
     var kolFiltered = 1
-    var kolChecked = 1
     
     @IBAction func chkReminder(_ sender: Any) {
         print("CheckBox")
-        kolChecked += 1
-        if (kolChecked % 2 == 0) {
-            let alertController = UIAlertController(title: "Reminder Checked", message:
-                "Можете удалить напоминание", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
+        let alertController = UIAlertController(title: "Checked", message:
+                "Success", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
         
-            self.present(alertController, animated: true, completion: nil)
-        } else
-        {
-            let alertController = UIAlertController(title: "Reminder Unchecked", message:
-                "Операция отменена", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)
-        }
+        self.present(alertController, animated: true, completion: nil)
         
     }
 
@@ -122,6 +111,7 @@ class ERTableViewController: UITableViewController {
         testReminder1.setValue("Voronezh", forKey: "location")
         testReminder1.setValue("Description1", forKey: "descrip")
         testReminder1.setValue(dateFormatter.date(from: "11-10-2018"), forKey: "date")
+        testReminder1.setValue(0, forKey: "done")
         reminders.append(testReminder1)
         
         testReminder2.setValue("title two", forKey: "title")
@@ -129,6 +119,7 @@ class ERTableViewController: UITableViewController {
         testReminder2.setValue("Voronezh", forKey: "location")
         testReminder2.setValue("Description2", forKey: "descrip")
         testReminder2.setValue(dateFormatter.date(from: "10-10-2018"), forKey: "date")
+        testReminder2.setValue(0, forKey: "done")
         reminders.append(testReminder2)
         
         testReminder3.setValue("title three", forKey: "title")
@@ -136,7 +127,10 @@ class ERTableViewController: UITableViewController {
         testReminder3.setValue("San-Francisco", forKey: "location")
         testReminder3.setValue("Description3", forKey: "descrip")
         testReminder3.setValue(dateFormatter.date(from: "10-11-2019"), forKey: "date")
+        testReminder3.setValue(0, forKey: "done")
         reminders.append(testReminder3)
+        
+        print(reminders)
     
     
     }
@@ -199,6 +193,7 @@ class ERTableViewController: UITableViewController {
         else {
             let reminder = reminders[indexPath.row]
             cell.textLabel!.text = reminder.value(forKey: "title") as? String
+            //cell.textLabel!.text = String(describing: reminder.value(forKey: "done"))
             cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
         }
         return cell
@@ -231,7 +226,6 @@ class ERTableViewController: UITableViewController {
             }
             else {
                 f = true
-                kolChecked = 1
                 let delReminder = reminders[indexPath.row]
                 closedReminders.append(delReminder)
                 reminders.remove(at: indexPath.row)

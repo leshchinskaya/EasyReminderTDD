@@ -22,5 +22,6 @@ extension Reminder {
     @NSManaged public var location: String?
     @NSManaged public var precedence: Int16
     @NSManaged public var title: String?
+    @NSManaged public var done: Bool
 
 }
