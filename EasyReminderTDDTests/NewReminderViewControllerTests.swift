@@ -69,6 +69,20 @@ class NewReminderViewControllerTests: XCTestCase {
         XCTAssertEqual(newScore, false)
     }
     
+    func test_NewReminderWithNilDesc(){
+        //dateFormatter.dateFormat = "MM-dd-yyyy"
+        
+        newReminderVC.titleTextField.text = "Title"
+        newReminderVC.dateTextField.text = "12-10-2017"
+        newReminderVC.locationTextField.text = "Voronezh"
+        newReminderVC.newIndexPrec = 1
+        
+        newReminderVC.save()
+        
+        let newScore = newReminderVC.f
+        XCTAssertEqual(newScore, false)
+    }
+    
     func test_ChangeIndexMoreThan3OrNo() {
         newReminderVC.segmentedControl.selectedSegmentIndex = 0
         newReminderVC.indexPrecedence(newReminderVC.segmentedControl)
@@ -164,11 +178,41 @@ class NewReminderViewControllerTests: XCTestCase {
         
     }
     
-    func test_DateSuccess() {
+    func test_DateNilSuccess() {
         dateFormatter.dateFormat = "MM-dd-yyyy"
-        //newReminderVC.strDate = "10-10-2017"
+        newReminderVC.titleTextField.text = "Title"
+        newReminderVC.dateTextField.text = "jhkhlk"
+        newReminderVC.locationTextField.text = "Voronezh"
+        newReminderVC.descripTextView.text = "Description New"
+        newReminderVC.newIndexPrec = 1
         
-        newReminderVC.datePickerAction([:])
+        newReminderVC.save()
         
+        XCTAssertEqual(newReminderVC.newDate, nil)
+        
+    }
+    
+    func test_LocationNilSuccess() {
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        newReminderVC.titleTextField.text = "Title"
+        newReminderVC.dateTextField.text = "10-10-2017"
+        newReminderVC.descripTextView.text = "Description New"
+        newReminderVC.newIndexPrec = 1
+        
+        newReminderVC.save()
+        
+        XCTAssertEqual(newReminderVC.newLocation, "")
+    }
+    
+    func test_PrecNilSuccess() {
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        newReminderVC.titleTextField.text = "Title"
+        newReminderVC.dateTextField.text = "10-10-2017"
+        newReminderVC.locationTextField.text = "Voronezh"
+        newReminderVC.descripTextView.text = "Description New"
+        
+        newReminderVC.save()
+        
+        XCTAssertEqual(newReminderVC.newIndexPrec, 0)
     }
 }

@@ -85,20 +85,28 @@ class UpdateReminderViewController: UIViewController {
         }
         else {
             f = true
+            let testReminder = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as! Reminder
             
-            reminder?.title = newTitle
-            reminder?.descrip = newDescrip
-            reminder?.location = newLocation
-            reminder?.precedence = Int16(newIndexPrec)
-            reminder?.date = newDate! as NSDate
- 
+            dateFormatter.dateFormat = "MM-dd-yyyy"
+            
+            testReminder.setValue(newTitle, forKey: "title")
+            newTitle = testReminder.title
+            testReminder.setValue(newIndexPrec, forKey: "precedence")
+            newIndexPrec = Int(testReminder.precedence)
+            testReminder.setValue(newLocation, forKey: "location")
+            newLocation = testReminder.location
+            testReminder.setValue(newDescrip, forKey: "descrip")
+            newDescrip = testReminder.descrip
+            testReminder.setValue(newDate, forKey: "date")
+            newDate = (testReminder.date ?? nil) as Date?
+            
             print("save changes")
             
-            guard let reminder = reminder, let indexPath = indexPath else {
+            guard let indexPath = indexPath else {
                 return
             }
             
-            delegate?.updateReminderViewController(self, didEditReminder: reminder, at: indexPath)
+            delegate?.updateReminderViewController(self, didEditReminder: testReminder, at: indexPath)
             dismiss(animated: true, completion: nil)
             navigationController?.popViewController(animated: true)
         }
@@ -115,7 +123,6 @@ class UpdateReminderViewController: UIViewController {
             //dateFormatter.dateFormat = "MM-dd-yyyy"
             if reminder?.date == nil {
                 dateTextField.text = ""
-                
             } else {
                 dateTextField.text = dateFormatter.string(from: (reminder?.date)! as Date)
             }
@@ -143,5 +150,7 @@ class UpdateReminderViewController: UIViewController {
         }
     }
     
+    // MARK: - CoreData
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 }

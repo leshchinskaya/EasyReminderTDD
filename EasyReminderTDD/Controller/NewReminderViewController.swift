@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 protocol NewReminderViewControllerDelegate: class  {
-    func newReminderViewController(_ newReminderViewController: NewReminderViewController, didAddReminder reminder: Reminder)
+    func newReminderViewController(_ newReminderViewController: NewReminderViewController, didAddReminder reminder: Reminder?)
 }
 
 class NewReminderViewController: UIViewController {
@@ -93,16 +93,8 @@ class NewReminderViewController: UIViewController {
             testReminder.setValue(newDate, forKey: "date")
             newDate = (testReminder.date ?? nil) as Date?
             reminders.append(testReminder)
+ 
             
-            
-            /*
-            reminder?.setValue(newTitle, forKey: "title")
-            reminder?.setValue(newIndexPrec, forKey: "precedence")
-            reminder?.setValue(newLocation, forKey: "location")
-            reminder?.setValue(newDescrip, forKey: "descrip")
-            reminder?.setValue(newDate, forKey: "date")
-            */
-            //reminders.append(reminder!)
             
             print("save new reminder")
             print(testReminder)

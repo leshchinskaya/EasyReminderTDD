@@ -386,9 +386,9 @@ class ERTableViewController: UITableViewController {
 }
 
 extension ERTableViewController: NewReminderViewControllerDelegate {
-    func newReminderViewController(_ newReminderViewController: NewReminderViewController, didAddReminder reminder: Reminder) {
+    func newReminderViewController(_ newReminderViewController: NewReminderViewController, didAddReminder reminder: Reminder?) {
         //print(reminder.title + " " + reminder.descrip)
-        reminders.append(reminder)
+        reminders.append(reminder!)
         tableView.reloadData()
         
     }
