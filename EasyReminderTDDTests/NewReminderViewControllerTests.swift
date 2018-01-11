@@ -163,4 +163,12 @@ class NewReminderViewControllerTests: XCTestCase {
         XCTAssertEqual(exp, 0)
         
     }
+    
+    func test_DateSuccess() {
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        //newReminderVC.strDate = "10-10-2017"
+        
+        newReminderVC.datePickerAction([:])
+        
+    }
 }

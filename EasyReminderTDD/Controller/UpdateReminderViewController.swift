@@ -16,13 +16,14 @@ protocol UpdateReminderViewControllerDelegate: class {
 class UpdateReminderViewController: UIViewController {
     
     let dateFormatter = DateFormatter()
-    var indexOld = 0
+    //var indexOld = 0
     var newIndexPrec = 0
     var newTitle: String?
     var newDescrip : String?
     var newDate: Date?
     var newLocation: String?
     var f = false
+
     
     
     weak var delegate: UpdateReminderViewControllerDelegate?
@@ -74,9 +75,9 @@ class UpdateReminderViewController: UIViewController {
         newDate = dateFormatter.date(from: dateTextField.text!)
         
         if newTitle == "" || newDescrip == "" {
-            f=false
             print("error: title == nil or descrip == nil")
             
+            //нет теста
             let alertController = UIAlertController(title: "Error", message:
                 "Description = nil or Title = nil", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
@@ -84,21 +85,18 @@ class UpdateReminderViewController: UIViewController {
         }
         else {
             f = true
+            
             reminder?.title = newTitle
             reminder?.descrip = newDescrip
             reminder?.location = newLocation
             reminder?.precedence = Int16(newIndexPrec)
-            
-            print("save changes")
             reminder?.date = newDate! as NSDate
-            
-            //print(reminder)
+ 
+            print("save changes")
             
             guard let reminder = reminder, let indexPath = indexPath else {
                 return
             }
-            
-            print(reminder)
             
             delegate?.updateReminderViewController(self, didEditReminder: reminder, at: indexPath)
             dismiss(animated: true, completion: nil)
@@ -108,15 +106,21 @@ class UpdateReminderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
         
         if (reminder != nil) {
             titleTextField.text = reminder?.title
             descripTextView.text = reminder?.descrip
             locationTextField.text = reminder?.location
-            dateFormatter.dateFormat = "MM-dd-yyyy"
-            dateTextField.text = dateFormatter.string(from: (reminder?.date)! as Date)
-            let prec : Int = Int((reminder?.precedence)!)
-            segmentedControl.selectedSegmentIndex = prec
+            //dateFormatter.dateFormat = "MM-dd-yyyy"
+            if reminder?.date == nil {
+                dateTextField.text = ""
+                
+            } else {
+                dateTextField.text = dateFormatter.string(from: (reminder?.date)! as Date)
+            }
+            newIndexPrec = Int((reminder?.precedence)!)
+            segmentedControl.selectedSegmentIndex = newIndexPrec
         }
         
         // Do any additional setup after loading the view.

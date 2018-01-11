@@ -220,7 +220,9 @@ class ERTableViewController: UITableViewController {
         else {
             let reminder = reminders[indexPath.row]
             cell.titleLabel.text = reminder.value(forKey: "title") as? String
+            if reminder.value(forKey: "date") == nil {cell.dateLabel.text = ""} else{
             cell.dateLabel.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+            }
             cell.chk.isHidden = false
             
             if (cell.check == 1)

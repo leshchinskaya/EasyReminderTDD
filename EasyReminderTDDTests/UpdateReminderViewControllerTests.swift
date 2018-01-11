@@ -130,7 +130,6 @@ class UpdateReminderViewControllerTests: XCTestCase {
         
         updateReminderVC.save()
     
-        
         let valueAfter = updateReminderVC.reminders.count
         let exp = valueAfter-valueBefore
         
@@ -164,10 +163,9 @@ class UpdateReminderViewControllerTests: XCTestCase {
         updateReminderVC.reminder?.descrip = "Test"
         updateReminderVC.reminder?.location = "Voronezh"
         dateFormatter.dateFormat = "MM-dd-yyyy"
-        updateReminderVC.reminder?.date = dateFormatter.date(from: "10-10-2018")! as NSDate
+        updateReminderVC.reminder?.date = dateFormatter.date(from: "10-10-2018") as! NSDate
         updateReminderVC.reminder?.precedence = 0
 
-        //updateReminderVC.viewDidLoad()
         
         updateReminderVC.titleTextField.text = "Title New"
         updateReminderVC.locationTextField.text = "Voronezh"
@@ -177,13 +175,13 @@ class UpdateReminderViewControllerTests: XCTestCase {
         
         updateReminderVC.save()
         
-        XCTAssertEqual(updateReminderVC.reminder?.title, "Title New")
-        XCTAssertEqual(updateReminderVC.reminder?.location, "Voronezh")
-        XCTAssertEqual(updateReminderVC.reminder?.descrip, "Description New")
-        XCTAssertEqual(updateReminderVC.reminder?.precedence, 1)
-        XCTAssertEqual(updateReminderVC.reminder?.date, dateFormatter.date(from: "10-10-2017") as! NSDate as! NSDate)
+        XCTAssertEqual(updateReminderVC.newTitle, "Title New")
+        XCTAssertEqual(updateReminderVC.newLocation, "Voronezh")
+        XCTAssertEqual(updateReminderVC.newDescrip, "Description New")
+        XCTAssertEqual(updateReminderVC.newIndexPrec, 1)
+        XCTAssertEqual(updateReminderVC.newDate, dateFormatter.date(from: "10-10-2017"))
     }
-    
+
     func test_SaveButtonHasSaveAction() {
         let saveButton: UIButton = updateReminderVC.saveButton
         guard let actions = saveButton.actions(forTarget: updateReminderVC, forControlEvent: .touchUpInside)

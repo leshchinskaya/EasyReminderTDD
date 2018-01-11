@@ -23,6 +23,7 @@ class NewReminderViewController: UIViewController {
     var newDescrip : String?
     var newDate: Date?
     var newLocation: String?
+    var strDate = ""
     
     var reminders = [Reminder]()
     var reminder: Reminder?
@@ -40,10 +41,9 @@ class NewReminderViewController: UIViewController {
     
     @IBAction func datePickerAction(_ sender: Any) {
         dateFormatter.dateFormat = "MM-dd-yyyy"
-        let strDate = dateFormatter.string(from: datePicker.date)
+        strDate = dateFormatter.string(from: datePicker.date)
         self.dateTextField.text = strDate
     }
-    
     
     @IBAction func indexPrecedence(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex
@@ -69,7 +69,7 @@ class NewReminderViewController: UIViewController {
         dateFormatter.dateFormat = "MM-dd-yyyy"
         newTitle = titleTextField.text
         newDescrip = descripTextView.text
-        newLocation = locationTextField.text
+        newLocation = locationTextField.text ?? ""
         newDate = dateFormatter.date(from: dateTextField.text ?? "")
         
         if (newTitle=="" || newDescrip=="") {
@@ -91,7 +91,7 @@ class NewReminderViewController: UIViewController {
             testReminder.setValue(newDescrip, forKey: "descrip")
             newDescrip = testReminder.descrip
             testReminder.setValue(newDate, forKey: "date")
-            newDate = (testReminder.date ?? nil) as! Date
+            newDate = (testReminder.date ?? nil) as Date?
             reminders.append(testReminder)
             
             
