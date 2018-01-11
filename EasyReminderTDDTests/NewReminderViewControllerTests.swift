@@ -82,6 +82,31 @@ class NewReminderViewControllerTests: XCTestCase {
         XCTAssertEqual(newScore5, 0)
     }
     
+    func test_Valid() {
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        
+        newReminderVC.titleTextField.text = "Title New"
+        newReminderVC.locationTextField.text = "Voronezh"
+        newReminderVC.dateTextField.text = "10-10-2017"
+        newReminderVC.descripTextView.text = "Description New"
+        newReminderVC.newIndexPrec = 1
+        
+        newReminderVC.save()
+        
+        let newTitle = newReminderVC.newTitle ?? ""
+        let newLocation = newReminderVC.newLocation ?? ""
+        let newDescrip = newReminderVC.newDescrip ?? ""
+        let newIndex = newReminderVC.newIndexPrec
+        let newDate = newReminderVC.newDate
+        
+        XCTAssertEqual(newTitle, "Title New")
+        XCTAssertEqual(newLocation, "Voronezh")
+        XCTAssertEqual(newDescrip, "Description New")
+        XCTAssertEqual(newIndex, 1)
+        XCTAssertEqual(newDate, dateFormatter.date(from: "10-10-2017"))
+    }
+    
+    
     func test_ChangeIndex() {
         
         newReminderVC.segmentedControl.selectedSegmentIndex = 1

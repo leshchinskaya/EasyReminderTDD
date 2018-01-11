@@ -88,6 +88,7 @@ class ERTableViewController: UITableViewController {
         
         filterButton.setTitleColor(.red, for: .normal)
         showClosedButton.setTitleColor(.red, for: .normal)
+        
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -177,7 +178,7 @@ class ERTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         dateFormatter.dateFormat = "MM-dd-yyyy"
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CustomTableViewCell
@@ -269,7 +270,7 @@ class ERTableViewController: UITableViewController {
                 print("error")
                 deleteFlag = false
             }
-            else {
+            else /*{
                 if (deletedReminders[indexPath.row] == 1) {
                     deleteFlag = true
                     let delReminder = reminders[indexPath.row]
@@ -277,11 +278,11 @@ class ERTableViewController: UITableViewController {
                     reminders.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
                 }
-                else {
+                else */{
                     deleteFlag = true
                     reminders.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
-                }
+                
             }
         }
         

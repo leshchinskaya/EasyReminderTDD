@@ -51,7 +51,6 @@ class UpdateReminderViewController: UIViewController {
         switch segmentedControl.selectedSegmentIndex
         {
         case 0:
-            newIndexPrec = 0
             print("No precedence");
         case 1:
             newIndexPrec = 1
@@ -74,24 +73,33 @@ class UpdateReminderViewController: UIViewController {
         newLocation = locationTextField.text
         newDate = dateFormatter.date(from: dateTextField.text!)
         
-        if newTitle == "" {
+        if newTitle == "" || newDescrip == "" {
             f=false
-            print("error: title == nil")
+            print("error: title == nil or descrip == nil")
+            
+            let alertController = UIAlertController(title: "Error", message:
+                "Description = nil or Title = nil", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
         }
         else {
             f = true
             reminder?.title = newTitle
             reminder?.descrip = newDescrip
             reminder?.location = newLocation
-            reminder?.date = newDate! as NSDate
             reminder?.precedence = Int16(newIndexPrec)
             
             print("save changes")
-            //print(reminder!)
+            reminder?.date = newDate! as NSDate
+            
+            //print(reminder)
             
             guard let reminder = reminder, let indexPath = indexPath else {
                 return
             }
+            
+            print(reminder)
+            
             delegate?.updateReminderViewController(self, didEditReminder: reminder, at: indexPath)
             dismiss(animated: true, completion: nil)
             navigationController?.popViewController(animated: true)

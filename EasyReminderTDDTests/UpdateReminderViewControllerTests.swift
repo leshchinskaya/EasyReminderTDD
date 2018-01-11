@@ -21,13 +21,16 @@ class UpdateReminderViewControllerTests: XCTestCase {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         updateReminderVC = storyboard.instantiateViewController(withIdentifier: "UpdateReminderViewController") as! UpdateReminderViewController
         
+        /*
         updateReminderVC.reminder?.title = "Test"
         updateReminderVC.reminder?.descrip = "Test"
         updateReminderVC.reminder?.location = "Voronezh"
         dateFormatter.dateFormat = "MM-dd-yyyy"
         updateReminderVC.reminder?.date = dateFormatter.date(from: "10-10-2018")! as NSDate
         updateReminderVC.reminder?.precedence = 0
-
+         */
+        
+        
         UIApplication.shared.keyWindow!.rootViewController = updateReminderVC
         
         let _ = updateReminderVC.view
@@ -46,6 +49,11 @@ class UpdateReminderViewControllerTests: XCTestCase {
         XCTAssertNotNil(updateReminderVC.dateTextField)
     }
     
+    /*
+    func test_AlertExist() {
+       updateReminderVC.
+    }
+    */
     func test_NewReminder(){
         //dateFormatter.dateFormat = "MM-dd-yyyy"
         
@@ -61,6 +69,7 @@ class UpdateReminderViewControllerTests: XCTestCase {
         XCTAssertEqual(newScore, true)
         
     }
+    
     
     func test_NewReminderWithNilTitle(){
         //dateFormatter.dateFormat = "MM-dd-yyyy"
@@ -147,6 +156,32 @@ class UpdateReminderViewControllerTests: XCTestCase {
         
         XCTAssertEqual(exp, 0)
         
+    }
+    
+    func test_Valid() {
+        
+        updateReminderVC.reminder?.title = "Test"
+        updateReminderVC.reminder?.descrip = "Test"
+        updateReminderVC.reminder?.location = "Voronezh"
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        updateReminderVC.reminder?.date = dateFormatter.date(from: "10-10-2018")! as NSDate
+        updateReminderVC.reminder?.precedence = 0
+
+        //updateReminderVC.viewDidLoad()
+        
+        updateReminderVC.titleTextField.text = "Title New"
+        updateReminderVC.locationTextField.text = "Voronezh"
+        updateReminderVC.dateTextField.text = "10-10-2017"
+        updateReminderVC.descripTextView.text = "Description New"
+        updateReminderVC.newIndexPrec = 1
+        
+        updateReminderVC.save()
+        
+        XCTAssertEqual(updateReminderVC.reminder?.title, "Title New")
+        XCTAssertEqual(updateReminderVC.reminder?.location, "Voronezh")
+        XCTAssertEqual(updateReminderVC.reminder?.descrip, "Description New")
+        XCTAssertEqual(updateReminderVC.reminder?.precedence, 1)
+        XCTAssertEqual(updateReminderVC.reminder?.date, dateFormatter.date(from: "10-10-2017") as! NSDate as! NSDate)
     }
     
     func test_SaveButtonHasSaveAction() {

@@ -49,7 +49,6 @@ class NewReminderViewController: UIViewController {
         switch segmentedControl.selectedSegmentIndex
         {
         case 0:
-            newIndexPrec = 0
             print("No precedence");
         case 1:
             newIndexPrec = 1
@@ -67,19 +66,15 @@ class NewReminderViewController: UIViewController {
     
     @IBAction func save() {
         
+        dateFormatter.dateFormat = "MM-dd-yyyy"
         newTitle = titleTextField.text
         newDescrip = descripTextView.text
         newLocation = locationTextField.text
-        newDate = dateFormatter.date(from: dateTextField.text!)
+        newDate = dateFormatter.date(from: dateTextField.text ?? "")
         
         if (newTitle=="" || newDescrip=="") {
-            f=false
+            //f=false
             print("error: title == nil or descrip == nil")
-            let alertController = UIAlertController(title: "Error", message:
-                "Description = nil", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)
         }
         else {
             f = true
@@ -87,14 +82,18 @@ class NewReminderViewController: UIViewController {
             
             dateFormatter.dateFormat = "MM-dd-yyyy"
             
-            
             testReminder.setValue(newTitle, forKey: "title")
+            newTitle = testReminder.title
             testReminder.setValue(newIndexPrec, forKey: "precedence")
+            newIndexPrec = Int(testReminder.precedence)
             testReminder.setValue(newLocation, forKey: "location")
+            newLocation = testReminder.location
             testReminder.setValue(newDescrip, forKey: "descrip")
+            newDescrip = testReminder.descrip
             testReminder.setValue(newDate, forKey: "date")
-            testReminder.setValue(0, forKey: "done")
+            newDate = (testReminder.date ?? nil) as! Date
             reminders.append(testReminder)
+            
             
             /*
             reminder?.setValue(newTitle, forKey: "title")
@@ -113,7 +112,6 @@ class NewReminderViewController: UIViewController {
             
             self.delegate?.newReminderViewController(self, didAddReminder: testReminder)
             self.navigationController?.popViewController(animated: true)
-            //self.itemManager?.addItem(item: item)
             self.dismiss(animated: true, completion: nil)
         }
     }
