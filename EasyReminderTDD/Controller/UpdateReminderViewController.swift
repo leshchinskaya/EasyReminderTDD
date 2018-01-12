@@ -78,11 +78,14 @@ class UpdateReminderViewController: UIViewController {
         if newTitle == "" || newDescrip == "" {
             print("error: title == nil or descrip == nil")
             
-            //нет теста
-            let alertController = UIAlertController(title: "Error", message:
-                "Description = nil or Title = nil", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alertController, animated: true, completion: nil)
+            if newTitle == "" {
+                titleTextField.text = "Добавьте название"
+            }
+            
+            if newDescrip == "" {
+                descripTextView.text = "Добавьте описание"
+            }
+            
         }
         else {
             f = true
@@ -114,6 +117,7 @@ class UpdateReminderViewController: UIViewController {
         super.viewDidLoad()
         dateFormatter.dateFormat = "MM-dd-yyyy"
 
+        //нет теста
         if reminder == nil {
             reminder = reminderT
         } else {

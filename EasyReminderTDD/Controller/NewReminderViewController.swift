@@ -23,7 +23,6 @@ class NewReminderViewController: UIViewController {
     var newDescrip : String?
     var newDate: Date?
     var newLocation: String?
-    var strDate = ""
     
     var reminders = [Reminder]()
     var reminder: Reminder?
@@ -41,7 +40,7 @@ class NewReminderViewController: UIViewController {
     
     @IBAction func datePickerAction(_ sender: Any) {
         dateFormatter.dateFormat = "MM-dd-yyyy"
-        strDate = dateFormatter.string(from: datePicker.date)
+        let strDate = dateFormatter.string(from: datePicker.date)
         self.dateTextField.text = strDate
     }
     

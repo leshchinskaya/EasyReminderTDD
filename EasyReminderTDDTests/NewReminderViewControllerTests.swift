@@ -209,4 +209,8 @@ class NewReminderViewControllerTests: XCTestCase {
         
         XCTAssertEqual(newReminderVC.newIndexPrec, 0)
     }
+    
+    func test_DatePickerSuccess(){
+        
+    }
 }
