@@ -30,6 +30,7 @@ class UpdateReminderViewController: UIViewController {
     
     var reminder: Reminder?
     var indexPath: IndexPath?
+    var reminderT = Reminder()
     
     var reminders = [Reminder]()
 
@@ -90,20 +91,17 @@ class UpdateReminderViewController: UIViewController {
             dateFormatter.dateFormat = "MM-dd-yyyy"
             
             testReminder.setValue(newTitle, forKey: "title")
-            newTitle = testReminder.title
             testReminder.setValue(newIndexPrec, forKey: "precedence")
-            newIndexPrec = Int(testReminder.precedence)
             testReminder.setValue(newLocation, forKey: "location")
-            newLocation = testReminder.location
             testReminder.setValue(newDescrip, forKey: "descrip")
-            newDescrip = testReminder.descrip
             testReminder.setValue(newDate, forKey: "date")
-            newDate = (testReminder.date ?? nil) as Date?
             
             print("save changes")
             
+            reminder = testReminder
+            
             guard let indexPath = indexPath else {
-                return
+               return
             }
             
             delegate?.updateReminderViewController(self, didEditReminder: testReminder, at: indexPath)
@@ -115,22 +113,22 @@ class UpdateReminderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dateFormatter.dateFormat = "MM-dd-yyyy"
-        
-        if (reminder != nil) {
+
+        if reminder == nil {
+            reminder = reminderT
+        } else {
             titleTextField.text = reminder?.title
             descripTextView.text = reminder?.descrip
             locationTextField.text = reminder?.location
-            //dateFormatter.dateFormat = "MM-dd-yyyy"
             if reminder?.date == nil {
                 dateTextField.text = ""
             } else {
                 dateTextField.text = dateFormatter.string(from: (reminder?.date)! as Date)
             }
-            newIndexPrec = Int((reminder?.precedence)!)
+            newIndexPrec = Int((reminder?.precedence) ?? 0)
             segmentedControl.selectedSegmentIndex = newIndexPrec
         }
-        
-        // Do any additional setup after loading the view.
+
         //navigationController?.navigationBar.prefersLargeTitles = false
     }
 

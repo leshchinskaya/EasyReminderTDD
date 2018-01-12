@@ -96,7 +96,7 @@ class NewReminderViewControllerTests: XCTestCase {
         XCTAssertEqual(newScore5, 0)
     }
     
-    func test_Valid() {
+    func test_NewAddSuccess() {
         dateFormatter.dateFormat = "MM-dd-yyyy"
         
         newReminderVC.titleTextField.text = "Title New"
@@ -107,17 +107,11 @@ class NewReminderViewControllerTests: XCTestCase {
         
         newReminderVC.save()
         
-        let newTitle = newReminderVC.newTitle ?? ""
-        let newLocation = newReminderVC.newLocation ?? ""
-        let newDescrip = newReminderVC.newDescrip ?? ""
-        let newIndex = newReminderVC.newIndexPrec
-        let newDate = newReminderVC.newDate
-        
-        XCTAssertEqual(newTitle, "Title New")
-        XCTAssertEqual(newLocation, "Voronezh")
-        XCTAssertEqual(newDescrip, "Description New")
-        XCTAssertEqual(newIndex, 1)
-        XCTAssertEqual(newDate, dateFormatter.date(from: "10-10-2017"))
+        XCTAssertEqual(newReminderVC.reminder?.title, "Title New")
+        XCTAssertEqual(newReminderVC.reminder?.location, "Voronezh")
+        XCTAssertEqual(newReminderVC.reminder?.descrip, "Description New")
+        XCTAssertEqual(newReminderVC.reminder?.precedence, 1)
+        XCTAssertEqual(newReminderVC.reminder?.date, dateFormatter.date(from: "10-10-2017") as! NSDate)
     }
     
     

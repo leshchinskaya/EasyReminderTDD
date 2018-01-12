@@ -83,18 +83,13 @@ class NewReminderViewController: UIViewController {
             dateFormatter.dateFormat = "MM-dd-yyyy"
             
             testReminder.setValue(newTitle, forKey: "title")
-            newTitle = testReminder.title
             testReminder.setValue(newIndexPrec, forKey: "precedence")
-            newIndexPrec = Int(testReminder.precedence)
             testReminder.setValue(newLocation, forKey: "location")
-            newLocation = testReminder.location
             testReminder.setValue(newDescrip, forKey: "descrip")
-            newDescrip = testReminder.descrip
             testReminder.setValue(newDate, forKey: "date")
-            newDate = (testReminder.date ?? nil) as Date?
             reminders.append(testReminder)
  
-            
+            reminder = testReminder
             
             print("save new reminder")
             print(testReminder)
