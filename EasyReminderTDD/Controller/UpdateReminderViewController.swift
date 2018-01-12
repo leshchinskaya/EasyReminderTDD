@@ -23,8 +23,6 @@ class UpdateReminderViewController: UIViewController {
     var newDate: Date?
     var newLocation: String?
     var f = false
-
-    
     
     weak var delegate: UpdateReminderViewControllerDelegate?
     
@@ -103,11 +101,11 @@ class UpdateReminderViewController: UIViewController {
             
             reminder = testReminder
             
-            guard let indexPath = indexPath else {
+            guard let reminder = reminder, let indexPath = indexPath else {
                return
             }
-            
-            delegate?.updateReminderViewController(self, didEditReminder: testReminder, at: indexPath)
+            //print ("TESTTTT")
+            delegate?.updateReminderViewController(self, didEditReminder: reminder, at: indexPath)
             dismiss(animated: true, completion: nil)
             navigationController?.popViewController(animated: true)
         }

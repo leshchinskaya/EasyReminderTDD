@@ -72,7 +72,6 @@ class NewReminderViewController: UIViewController {
         newDate = dateFormatter.date(from: dateTextField.text ?? "")
         
         if (newTitle=="" || newDescrip=="") {
-            //f=false
             print("error: title == nil or descrip == nil")
         }
         else {
@@ -92,11 +91,11 @@ class NewReminderViewController: UIViewController {
             
             print("save new reminder")
             print(testReminder)
-            
-            //print(reminders)
-            //print(testReminder)
-            
-            self.delegate?.newReminderViewController(self, didAddReminder: testReminder)
+
+            guard let reminder = reminder else {
+                return
+            }
+            self.delegate?.newReminderViewController(self, didAddReminder: reminder)
             self.navigationController?.popViewController(animated: true)
             self.dismiss(animated: true, completion: nil)
         }
