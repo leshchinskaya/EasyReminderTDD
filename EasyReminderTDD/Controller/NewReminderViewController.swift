@@ -118,7 +118,6 @@ class NewReminderViewController: UIViewController {
         super.viewWillDisappear(animated)
         save()
     }
-    
 
     /*
     // MARK: - Navigation

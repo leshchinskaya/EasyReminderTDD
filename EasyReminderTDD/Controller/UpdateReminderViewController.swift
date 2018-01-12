@@ -117,21 +117,19 @@ class UpdateReminderViewController: UIViewController {
         super.viewDidLoad()
         dateFormatter.dateFormat = "MM-dd-yyyy"
 
-        //нет теста
         if reminder == nil {
             reminder = reminderT
-        } else {
-            titleTextField.text = reminder?.title
-            descripTextView.text = reminder?.descrip
-            locationTextField.text = reminder?.location
-            if reminder?.date == nil {
-                dateTextField.text = ""
-            } else {
-                dateTextField.text = dateFormatter.string(from: (reminder?.date)! as Date)
-            }
-            newIndexPrec = Int((reminder?.precedence) ?? 0)
-            segmentedControl.selectedSegmentIndex = newIndexPrec
         }
+        titleTextField.text = reminder?.title
+        descripTextView.text = reminder?.descrip
+        locationTextField.text = reminder?.location
+        if reminder?.date == nil {
+            dateTextField.text = ""
+        } else {
+            dateTextField.text = dateFormatter.string(from: (reminder?.date)! as Date)
+        }
+        newIndexPrec = Int((reminder?.precedence) ?? 0)
+        segmentedControl.selectedSegmentIndex = newIndexPrec
 
         //navigationController?.navigationBar.prefersLargeTitles = false
     }

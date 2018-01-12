@@ -110,7 +110,6 @@ class ERTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         //navigationController?.navigationBar.prefersLargeTitles = true
         super.viewWillAppear(animated)
-        
         tableView.reloadData()
     }
     
@@ -128,6 +127,7 @@ class ERTableViewController: UITableViewController {
         testReminder1.setValue(dateFormatter.date(from: "11-10-2018"), forKey: "date")
         testReminder1.setValue(0, forKey: "done")
         reminders.append(testReminder1)
+        
         
         testReminder2.setValue("купить хлеба", forKey: "title")
         testReminder2.setValue(2, forKey: "precedence")

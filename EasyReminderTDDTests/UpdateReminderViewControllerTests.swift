@@ -38,7 +38,6 @@ class UpdateReminderViewControllerTests: XCTestCase {
         XCTAssertNotNil(updateReminderVC.descripTextView)
         XCTAssertNotNil(updateReminderVC.dateTextField)
     }
-    
 
     func test_AlertExistWithNilTitle() {
         updateReminderVC.titleTextField.text = nil
@@ -99,7 +98,7 @@ class UpdateReminderViewControllerTests: XCTestCase {
         XCTAssertEqual(updateReminderVC.descripTextView.text, "Des")
         XCTAssertEqual(updateReminderVC.segmentedControl.selectedSegmentIndex, 1)
         XCTAssertEqual(updateReminderVC.dateTextField.text, "10-10-2018")
-        
+        //XCTAssertThrowsError(updateReminderVC.reminder?.date)
     }
     
     func test_NewReminder(){
