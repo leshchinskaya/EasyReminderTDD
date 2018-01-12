@@ -32,13 +32,27 @@ class ERTableViewControllerTests: XCTestCase {
         XCTAssertNotNil(erTableVC.tableView)
     }
     
+    /*
     func test_Reload() {
         let indexPath = IndexPath(row: 1, section: 0)
         erTableVC.deletedReminders[indexPath.row] = 0
         erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
         //erTableVC.tableView.deleteRows(at: [indexPath], with: .fade)
     }
-
+     */
+    
+    func test_EgitingStyleNotDelete() {
+        var indexPath = IndexPath(row: 1, section: 0)
+        erTableVC.deletedReminders[indexPath.row] = 1
+        erTableVC.tableView(erTableVC.tableView, commit: .insert, forRowAt: indexPath)
+        let newScore1 = erTableVC.deleteFlag
+        XCTAssertEqual(newScore1, false)
+        
+        erTableVC.tableView(erTableVC.tableView, commit: .none, forRowAt: indexPath)
+        let newScore2 = erTableVC.deleteFlag
+        XCTAssertEqual(newScore2, false)
+    }
+    
     func test_DeleteReminderSuccess() {
         var indexPath = IndexPath(row: 1, section: 0)
         erTableVC.deletedReminders[indexPath.row] = 1
@@ -52,6 +66,8 @@ class ERTableViewControllerTests: XCTestCase {
         let newScore2 = erTableVC.deleteFlag
         XCTAssertEqual(newScore2, true)
         
+        //XCTAssertEqual(erTableVC.saveContFlag, true)
+        
     }
 
     func test_DeleteReminderFailed() {
@@ -61,7 +77,7 @@ class ERTableViewControllerTests: XCTestCase {
         
         XCTAssertEqual(newScore1, false)
         
-        indexPath = IndexPath(row: 3, section: 0)
+        indexPath = IndexPath(row: 100, section: 0)
         erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
         let newScore2 = erTableVC.deleteFlag
         XCTAssertEqual(newScore2, false)
@@ -99,6 +115,7 @@ class ERTableViewControllerTests: XCTestCase {
     func test_SortedAndClosedFlagFalse() {
         erTableVC.sortedFlag = false
         erTableVC.closedFlag = false
+        
         var indexPath = IndexPath(row: 0, section: 0)
         erTableVC.deletedReminders[indexPath.row] = 1
         erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
@@ -106,6 +123,7 @@ class ERTableViewControllerTests: XCTestCase {
         XCTAssertEqual(newScore, true)
     }
     
+    /*
     func test_DeleteTrueWithAddToClosedReminders(){
         var indexPath = IndexPath(row: 0, section: 0)
         erTableVC.deletedReminders[indexPath.row] = 1
@@ -113,8 +131,10 @@ class ERTableViewControllerTests: XCTestCase {
         let newScore = erTableVC.deleteFlag
         XCTAssertEqual(newScore, true)
     }
+    */
     
     func test_DeleteTrueWithoutAddToClosedReminder(){
+        
         var indexPath = IndexPath(row: 0, section: 0)
         erTableVC.deletedReminders[indexPath.row] = 0
         erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
@@ -142,6 +162,7 @@ class ERTableViewControllerTests: XCTestCase {
     func test_NotAddToClosedReminders() {
         erTableVC.sortedFlag = false
         erTableVC.closedFlag = false
+        
         var indexPath = IndexPath(row: 0, section: 0)
         let sizeBefore = erTableVC.closedReminders.count
         erTableVC.deletedReminders[indexPath.row] = 0

@@ -28,8 +28,10 @@ class ERTableViewController: UITableViewController {
     var deletedReminders = [Int](repeating: 0, count: 500)
     
     var deleteFlag = false
+    var saveCDAfterDeleteFlag = false
     var sortedFlag = false
     var closedFlag = false
+    var saveContFlag = false
     var kolClosed = 1
     var kolFiltered = 1
     
@@ -87,7 +89,7 @@ class ERTableViewController: UITableViewController {
         //deletedReminders = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         //chk.onClick = { (checkbox) in
         //    print(checkbox.isChecked)
-       //}
+        //}
         
         filterButton.setTitleColor(.red, for: .normal)
         showClosedButton.setTitleColor(.red, for: .normal)
@@ -101,7 +103,7 @@ class ERTableViewController: UITableViewController {
         //navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
         
-        //addInitReminder()
+        addInitReminder()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -114,6 +116,7 @@ class ERTableViewController: UITableViewController {
         //navigationController?.navigationBar.prefersLargeTitles = true
         super.viewWillAppear(animated)
         
+        /*
         let employeeReminder = NSFetchRequest<NSFetchRequestResult>(entityName: "Reminder")
         do {
             let fetchedEmployees = try context.fetch(employeeReminder) as? [Reminder]
@@ -125,9 +128,7 @@ class ERTableViewController: UITableViewController {
         } catch {
             fatalError("Failed to fetch employees: \(error)")
         }
-        
-        print ("employeeReminder")
-        print(employeeReminder)
+        */
         
         tableView.reloadData()
 
@@ -147,14 +148,8 @@ class ERTableViewController: UITableViewController {
         testReminder1.setValue(dateFormatter.date(from: "11-10-2018"), forKey: "date")
         testReminder1.setValue(0, forKey: "done")
         
-        
-        do {
-            try context.save()
-        } catch {
-            fatalError("Failure to save context: \(error)")
-        }
         reminders.append(testReminder1)
-        
+    
         
         testReminder2.setValue("купить хлеба", forKey: "title")
         testReminder2.setValue(2, forKey: "precedence")
@@ -163,11 +158,6 @@ class ERTableViewController: UITableViewController {
         testReminder2.setValue(dateFormatter.date(from: "10-10-2018"), forKey: "date")
         testReminder2.setValue(0, forKey: "done")
         
-        do {
-            try context.save()
-        } catch {
-            fatalError("Failure to save context: \(error)")
-        }
         reminders.append(testReminder2)
         
         testReminder3.setValue("смета", forKey: "title")
@@ -177,13 +167,7 @@ class ERTableViewController: UITableViewController {
         testReminder3.setValue(dateFormatter.date(from: "10-11-2019"), forKey: "date")
         testReminder3.setValue(0, forKey: "done")
         
-        do {
-            try context.save()
-        } catch {
-            fatalError("Failure to save context: \(error)")
-        }
         reminders.append(testReminder3)
-        
         
         print(reminders)
     
@@ -227,7 +211,12 @@ class ERTableViewController: UITableViewController {
             let reminder = filteredReminders[indexPath.row]
             
             cell.titleLabel.text = reminder.value(forKey: "title") as? String
-            cell.dateLabel.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+            if reminder.value(forKey: "date") == nil {
+                cell.dateLabel.text = ""
+            }
+            else {
+                cell.dateLabel.text = dateFormatter.string(from: (reminder.value(forKey: "date") as! Date))
+            }
             
             //cell.textLabel!.text = reminder.value(forKey: "title") as? String
             //cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
@@ -236,20 +225,26 @@ class ERTableViewController: UITableViewController {
         if sortedFlag {
             let reminder = sortedReminders[indexPath.row]
             cell.titleLabel.text = reminder.value(forKey: "title") as? String
-            cell.dateLabel.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
-            
-            //cell.textLabel!.text = reminder.value(forKey: "title") as? String
-            //cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+            if reminder.value(forKey: "date") == nil {
+                cell.dateLabel.text = ""
+            }
+            else {
+                cell.dateLabel.text = dateFormatter.string(from: (reminder.value(forKey: "date") as! Date))
+            }
+
         }
         else if closedFlag {
             if (closedReminders.count != 0) {
                 let reminder = closedReminders[indexPath.row]
                 cell.titleLabel.text = reminder.value(forKey: "title") as? String
-                cell.dateLabel.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
+                if reminder.value(forKey: "date") == nil {
+                    cell.dateLabel.text = ""
+                }
+                else {
+                    cell.dateLabel.text = dateFormatter.string(from: (reminder.value(forKey: "date") as! Date))
+                }
                 cell.chk.isHidden = true
                 
-                //cell.textLabel!.text = reminder.value(forKey: "title") as? String
-               //cell.detailTextLabel!.text = dateFormatter.string(from: reminder.value(forKey: "date") as! Date)
             }
             else {
                 closedFlag = false
@@ -267,20 +262,22 @@ class ERTableViewController: UITableViewController {
             
             if (cell.check == 1)
             {
-                deletedReminders[indexPath.row] = 1
                 deleteFlag = true
+                deletedReminders[indexPath.row] = 1
                 let delReminder = reminders[indexPath.row]
                 closedReminders.append(delReminder)
-                context.delete(reminders[indexPath.row] as Reminder)
+                //context.delete(reminders[indexPath.row] as Reminder)
                 reminders.remove(at: indexPath.row)
                 tableView.reloadData()
                 cell.check = 0
                 cell.chk.isChecked = false
-                do {
-                    try context.save()
-                } catch {
-                    fatalError("Failure to save context: \(error)")
-                }
+                //do {
+                //    try context.save()
+                //    deleteFlag = true
+                //} catch {
+                //    deleteFlag = false
+                //    fatalError("Failure to save context: \(error)")
+                //}
                 //cell.check = 0
             }
             else {
@@ -306,42 +303,35 @@ class ERTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if  (sortedFlag || closedFlag) {
-            deleteFlag = false
             print ("error")
         } else
         if editingStyle == .delete {
             if (indexPath.row >= reminders.count) {
                 print ("error")
-                deleteFlag = false
             }
             else if (indexPath.row < 0) {
                 print("error")
-                deleteFlag = false
             }
-            else /*{
-                if (deletedReminders[indexPath.row] == 1) {
-                    deleteFlag = true
-                    let delReminder = reminders[indexPath.row]
-                    closedReminders.append(delReminder)
-                    reminders.remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                }
-                else */{
-                    deleteFlag = true
-                    context.delete(reminders[indexPath.row] as Reminder)
-                    reminders.remove(at: indexPath.row)
-                    do {
-                        try context.save()
-                    } catch {
-                        fatalError("Failure to save context: \(error)")
-                    }
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                
+            else {
+                deleteFlag = true
+                reminders.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
             }
+        } else {
+            deleteFlag = false
         }
         
     }
     
+    func saveCont(){
+        do {
+            saveContFlag = true
+            try context.save()
+        } catch {
+            fatalError("Failure to save context:\(error)")
+            saveContFlag = false
+        }
+    }
 
     /*
     // Override to support rearranging the table view.
@@ -441,12 +431,7 @@ extension ERTableViewController: NewReminderViewControllerDelegate {
     func newReminderViewController(_ newReminderViewController: NewReminderViewController, didAddReminder reminder: Reminder?) {
         //print(reminder.title + " " + reminder.descrip)
         
-        do {
-            try context.save()
-        } catch {
-            fatalError("Failure to save context: \(error)")
-        }
-        
+        //saveCont()
         reminders.append(reminder!)
         tableView.reloadData()
         
@@ -456,14 +441,11 @@ extension ERTableViewController: NewReminderViewControllerDelegate {
 extension ERTableViewController: UpdateReminderViewControllerDelegate {
     func updateReminderViewController(_ updateReminderViewController: UpdateReminderViewController, didEditReminder reminder: Reminder, at indexPath: IndexPath) {
         
-        do {
-            try context.save()
-        } catch {
-            fatalError("Failure to save context: \(error)")
-        }
-        
+        //context.delete(reminders[indexPath.row])
+        //reminders.remove(at: indexPath.row)
         reminders[indexPath.row] = reminder
-        tableView.reloadData()
+        //saveCont()
+        //tableView.reloadData()
     }
 }
 
