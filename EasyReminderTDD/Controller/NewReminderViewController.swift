@@ -82,7 +82,7 @@ class NewReminderViewController: UIViewController {
             
             testReminder.setValue(newTitle, forKey: "title")
             testReminder.setValue(newIndexPrec, forKey: "precedence")
-            testReminder.setValue(newLocation, forKey: "location")
+            //testReminder.setValue(newLocation, forKey: "location")
             testReminder.setValue(newDescrip, forKey: "descrip")
             testReminder.setValue(newDate, forKey: "date")
             reminders.append(testReminder)

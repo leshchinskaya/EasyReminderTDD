@@ -66,8 +66,6 @@ class ERTableViewControllerTests: XCTestCase {
         let newScore2 = erTableVC.deleteFlag
         XCTAssertEqual(newScore2, true)
         
-        //XCTAssertEqual(erTableVC.saveContFlag, true)
-        
     }
 
     func test_DeleteReminderFailed() {
@@ -81,20 +79,13 @@ class ERTableViewControllerTests: XCTestCase {
         erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
         let newScore2 = erTableVC.deleteFlag
         XCTAssertEqual(newScore2, false)
-        
-        /*
-        indexPath = IndexPath(row: 1, section: 0)
-        erTableVC.deletedReminders[indexPath.row] = 0
-        erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
-        let newScore3 = erTableVC.deleteFlag
-        XCTAssertEqual(newScore3, false)
- */
+    
     }
     
     func test_SortedOrClosedFlagTrue() {
         erTableVC.sortedFlag = true
         erTableVC.closedFlag = false
-        var indexPath = IndexPath(row: 0, section: 0)
+        let indexPath = IndexPath(row: 0, section: 0)
         erTableVC.tableView(erTableVC.tableView, commit: .delete, forRowAt: indexPath)
         let newScore1 = erTableVC.deleteFlag
         XCTAssertEqual(newScore1, false)
