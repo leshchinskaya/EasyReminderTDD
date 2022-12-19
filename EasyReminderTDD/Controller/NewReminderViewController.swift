@@ -23,6 +23,7 @@ class NewReminderViewController: UIViewController {
     var newDescrip : String?
     var newDate: Date?
     var newLocation: String?
+    //аа
     
     var reminders = [Reminder]()
     var reminder: Reminder?
