@@ -61,7 +61,7 @@ class ERTableViewController: UITableViewController {
             closedFlag = false
             showClosedButton.setTitleColor(.red, for: .normal)
             tableView.reloadData()
-        }
+        }//test
         
     }
     @IBAction func update(_ sender: Any) {
@@ -90,10 +90,11 @@ class ERTableViewController: UITableViewController {
         //chk.onClick = { (checkbox) in
         //    print(checkbox.isChecked)
         //}
-        
+        filterButton.accessibilityIdentifier = Accessibility.EasyReminderScreen.filterButton
+       // filterButton.accessibilityIdentifier = "filterid"
         filterButton.setTitleColor(.red, for: .normal)
         showClosedButton.setTitleColor(.red, for: .normal)
-        
+    
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false

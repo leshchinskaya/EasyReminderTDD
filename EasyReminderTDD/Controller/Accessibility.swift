@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+public enum Accessibility {
+    public enum EasyReminderScreen {
+           public static let filterButton = "filter"
+       }
+}
