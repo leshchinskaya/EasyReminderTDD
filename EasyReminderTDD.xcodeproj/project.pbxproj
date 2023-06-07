@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1A87406F209702A072958DCA /* Pods_EasyReminderTDDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A2BDC08B7575FB0D64F7F5 /* Pods_EasyReminderTDDTests.framework */; };
 		459EBC0D0E88F1AA2ADE6D55 /* Pods_EasyReminderTDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46CD54D6C6A640C922DFE34 /* Pods_EasyReminderTDD.framework */; };
+		9A3EA5B52A30B45D0010DC80 /* EasyReminderTDDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5B42A30B45D0010DC80 /* EasyReminderTDDUITests.swift */; };
+		9A3EA5C12A30B4A00010DC80 /* AccessibillityIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5C02A30B4A00010DC80 /* AccessibillityIds.swift */; };
+		9A3EA6222A30BD560010DC80 /* AddNewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5D22A30B51A0010DC80 /* AddNewTask.swift */; };
+		9A3EA63E2A30BFEF0010DC80 /* Smoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5D72A30B88E0010DC80 /* Smoke.swift */; };
+		9A3EA6452A30C10E0010DC80 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5CA2A30B50B0010DC80 /* Main.swift */; };
 		CD27FA311FEEADFB00414187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA301FEEADFB00414187 /* AppDelegate.swift */; };
 		CD27FA361FEEADFB00414187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD27FA341FEEADFB00414187 /* Main.storyboard */; };
 		CD27FA391FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA371FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld */; };
@@ -30,6 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A3EA5B72A30B45D0010DC80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD27FA251FEEADFB00414187 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD27FA2C1FEEADFB00414187;
+			remoteInfo = EasyReminderTDD;
+		};
 		CD27FA451FEEADFC00414187 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CD27FA251FEEADFB00414187 /* Project object */;
@@ -44,6 +56,13 @@
 		815F41104346D0DD11D46080 /* Pods-EasyReminderTDD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyReminderTDD.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyReminderTDD/Pods-EasyReminderTDD.release.xcconfig"; sourceTree = "<group>"; };
 		98A2BDC08B7575FB0D64F7F5 /* Pods_EasyReminderTDDTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyReminderTDDTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E3FBD1485A919EFCBC8BD5 /* Pods-EasyReminderTDD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyReminderTDD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyReminderTDD/Pods-EasyReminderTDD.debug.xcconfig"; sourceTree = "<group>"; };
+		9A3EA5B22A30B45D0010DC80 /* EasyReminderTDDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyReminderTDDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A3EA5B42A30B45D0010DC80 /* EasyReminderTDDUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyReminderTDDUITests.swift; sourceTree = "<group>"; };
+		9A3EA5B62A30B45D0010DC80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A3EA5C02A30B4A00010DC80 /* AccessibillityIds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibillityIds.swift; sourceTree = "<group>"; };
+		9A3EA5CA2A30B50B0010DC80 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		9A3EA5D22A30B51A0010DC80 /* AddNewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTask.swift; sourceTree = "<group>"; };
+		9A3EA5D72A30B88E0010DC80 /* Smoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smoke.swift; sourceTree = "<group>"; };
 		B5B460056985056051588662 /* Pods-EasyReminderTDDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyReminderTDDTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyReminderTDDTests/Pods-EasyReminderTDDTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD27FA2D1FEEADFB00414187 /* EasyReminderTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyReminderTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD27FA301FEEADFB00414187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +90,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9A3EA5AF2A30B45D0010DC80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CD27FA2A1FEEADFB00414187 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,11 +117,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A3EA5B32A30B45D0010DC80 /* EasyReminderTDDUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9A3EA5C92A30B4F30010DC80 /* Screen */,
+				9A3EA5C82A30B4E80010DC80 /* Tests */,
+				9A3EA5B42A30B45D0010DC80 /* EasyReminderTDDUITests.swift */,
+				9A3EA5B62A30B45D0010DC80 /* Info.plist */,
+			);
+			path = EasyReminderTDDUITests;
+			sourceTree = "<group>";
+		};
+		9A3EA5BF2A30B47E0010DC80 /* AccessibillityIds */ = {
+			isa = PBXGroup;
+			children = (
+				9A3EA5C02A30B4A00010DC80 /* AccessibillityIds.swift */,
+			);
+			path = AccessibillityIds;
+			sourceTree = "<group>";
+		};
+		9A3EA5C82A30B4E80010DC80 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9A3EA5D72A30B88E0010DC80 /* Smoke.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		9A3EA5C92A30B4F30010DC80 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				9A3EA5CA2A30B50B0010DC80 /* Main.swift */,
+				9A3EA5D22A30B51A0010DC80 /* AddNewTask.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		CD27FA241FEEADFB00414187 = {
 			isa = PBXGroup;
 			children = (
+				9A3EA5BF2A30B47E0010DC80 /* AccessibillityIds */,
 				CD27FA2F1FEEADFB00414187 /* EasyReminderTDD */,
 				CD27FA471FEEADFC00414187 /* EasyReminderTDDTests */,
+				9A3EA5B32A30B45D0010DC80 /* EasyReminderTDDUITests */,
 				CD27FA2E1FEEADFB00414187 /* Products */,
 				CD2E88361FEEB4E900B7F879 /* Frameworks */,
 				D29B1086B1B9F5767107603E /* Pods */,
@@ -107,6 +171,7 @@
 			children = (
 				CD27FA2D1FEEADFB00414187 /* EasyReminderTDD.app */,
 				CD27FA441FEEADFC00414187 /* EasyReminderTDDTests.xctest */,
+				9A3EA5B22A30B45D0010DC80 /* EasyReminderTDDUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +257,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9A3EA5B12A30B45D0010DC80 /* EasyReminderTDDUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A3EA5BB2A30B45D0010DC80 /* Build configuration list for PBXNativeTarget "EasyReminderTDDUITests" */;
+			buildPhases = (
+				9A3EA5AE2A30B45D0010DC80 /* Sources */,
+				9A3EA5AF2A30B45D0010DC80 /* Frameworks */,
+				9A3EA5B02A30B45D0010DC80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A3EA5B82A30B45D0010DC80 /* PBXTargetDependency */,
+			);
+			name = EasyReminderTDDUITests;
+			productName = EasyReminderTDDUITests;
+			productReference = 9A3EA5B22A30B45D0010DC80 /* EasyReminderTDDUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		CD27FA2C1FEEADFB00414187 /* EasyReminderTDD */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD27FA4D1FEEADFC00414187 /* Build configuration list for PBXNativeTarget "EasyReminderTDD" */;
@@ -239,10 +322,15 @@
 		CD27FA251FEEADFB00414187 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Mariya;
 				TargetAttributes = {
+					9A3EA5B12A30B45D0010DC80 = {
+						CreatedOnToolsVersion = 12.4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CD27FA2C1FEEADFB00414187;
+					};
 					CD27FA2C1FEEADFB00414187 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -274,11 +362,19 @@
 			targets = (
 				CD27FA2C1FEEADFB00414187 /* EasyReminderTDD */,
 				CD27FA431FEEADFC00414187 /* EasyReminderTDDTests */,
+				9A3EA5B12A30B45D0010DC80 /* EasyReminderTDDUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9A3EA5B02A30B45D0010DC80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CD27FA2B1FEEADFB00414187 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,6 +488,18 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9A3EA5AE2A30B45D0010DC80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A3EA6452A30C10E0010DC80 /* Main.swift in Sources */,
+				9A3EA5C12A30B4A00010DC80 /* AccessibillityIds.swift in Sources */,
+				9A3EA63E2A30BFEF0010DC80 /* Smoke.swift in Sources */,
+				9A3EA5B52A30B45D0010DC80 /* EasyReminderTDDUITests.swift in Sources */,
+				9A3EA6222A30BD560010DC80 /* AddNewTask.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CD27FA291FEEADFB00414187 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,6 +531,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9A3EA5B82A30B45D0010DC80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD27FA2C1FEEADFB00414187 /* EasyReminderTDD */;
+			targetProxy = 9A3EA5B72A30B45D0010DC80 /* PBXContainerItemProxy */;
+		};
 		CD27FA461FEEADFC00414187 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CD27FA2C1FEEADFB00414187 /* EasyReminderTDD */;
@@ -450,6 +563,47 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9A3EA5B92A30B45D0010DC80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EasyReminderTDDUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.EasyReminderTDDUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EasyReminderTDD;
+			};
+			name = Debug;
+		};
+		9A3EA5BA2A30B45D0010DC80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EasyReminderTDDUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.EasyReminderTDDUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EasyReminderTDD;
+			};
+			name = Release;
+		};
 		CD27FA4B1FEEADFC00414187 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -630,6 +784,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9A3EA5BB2A30B45D0010DC80 /* Build configuration list for PBXNativeTarget "EasyReminderTDDUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A3EA5B92A30B45D0010DC80 /* Debug */,
+				9A3EA5BA2A30B45D0010DC80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CD27FA281FEEADFB00414187 /* Build configuration list for PBXProject "EasyReminderTDD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
