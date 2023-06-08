@@ -28,47 +28,41 @@ class SmokeTest: XCTestCase {
     func testSmoke() throws {
         
         /// Тап по кнопке “Add” -> Переход на экран создания задачи
-        let stepToNewAddTask = XCUIApplication().buttons[AccessibilityIDs.Main.addButton]
-        stepToNewAddTask.tap()
+        Main.get(.addButton).tap()
         XCTAssertTrue(XCUIApplication().textFields[AccessibilityIDs.AddNewTask.title].exists)
         
+        // В поле “Description” ввести описание задачи -> Поле заполнено
+        AddNewTask.get(.description).tap()
+        AddNewTask.get(.description).typeText("Тестовый тест тестируем")
+        XCTAssertEqual(AddNewTask.get(.description).value as! String, "Тестовый тест тестируем")
+        
         /// В поле “Title” ввести название задачи -> Поле заполнено
-        let titleField = XCUIApplication().textFields[AccessibilityIDs.AddNewTask.title]
-        titleField.tap()
-        titleField.typeText("Тест")
-        XCTAssertEqual(titleField.value as! String, "Тест")
+        AddNewTask.get(.title).tap()
+        AddNewTask.get(.title).typeText("Тест")
+        XCTAssertEqual(AddNewTask.get(.title).value as! String, "Тест")
         
         // Тап по дата-пикеру -> Появляется календарь
+        AddNewTask.get(.myDate).tap()
         
         // Тап по нужной дате -> Тап по свободному пространству вне календаря -> Календарь закрывается -> Поле ввода даты заполнено
-        let choiseDate = XCUIApplication().datePickers[AccessibilityIDs.AddNewTask.datepicker].collectionViews.buttons["Thursday, June 8"].otherElements.containing(.staticText, identifier:"8").element
         choiseDate.tap()
-        XCTAssertEqual(XCUIApplication().textFields[AccessibilityIDs.AddNewTask.date].value as! String, "06-08-2023")
+        freeSpace.tap()
+        XCTAssertEqual(AddNewTask.get(.date).value as! String, "06-09-2023")
         
         // В поле “Location” ввести название локации -> Поле заполнено
-        let locationField = XCUIApplication().textFields[AccessibilityIDs.AddNewTask.location]
-        locationField.tap()
-        locationField.typeText("Воронеж")
-        XCTAssertEqual(locationField.value as! String, "Воронеж")
+        AddNewTask.get(.location).tap()
+        AddNewTask.get(.location).typeText("Воронеж")
+        XCTAssertEqual(AddNewTask.get(.location).value as! String, "Воронеж")
         
         // Тап по приоритету в Свитчере -> Кнопка приоритета выделена
-        let choisePriority = XCUIApplication().buttons[AccessibilityIDs.AddNewTask.segmented_control_high_priority]
-        choisePriority.tap()
-        XCTAssertTrue(choisePriority.isSelected)
-        
-        // В поле “Description” ввести описание задачи -> Поле заполнено
-        let descriptionField = XCUIApplication().textFields[AccessibilityIDs.AddNewTask.description]
-        descriptionField.tap()
-        descriptionField.typeText("Тестовый тест тестируем")
-        XCTAssertEqual(descriptionField.value as! String, "Тестовый тест тестируем")
+        AddNewTask.get(.priority).buttons.element(boundBy: buttonIndex).tap()
+        XCTAssertTrue(AddNewTask.get(.priority).buttons.element(boundBy: buttonIndex).isSelected)
         
         // Тап по кнопке назад -> Переход на Главный экран -> Задача сохранена
-        let saveTask = XCUIApplication().buttons[AccessibilityIDs.AddNewTask.back].tap()
-        XCTAssertEqual(XCUIApplication().staticTexts[AccessibilityIDs.Main.datelabel].value as! String, "06-08-2023")
+        save.tap()
         
         // Тап по чек-боксу -> Задача переходит в список выполненных
-        let passTask = XCUIApplication().checkBoxes[AccessibilityIDs.Main.checkBox].tables.cells.containing(.staticText, identifier:"Тест").otherElements["CheckId"]
         passTask.tap()
-        XCTAssertFalse(passTask.isSelected, "Задача не переходит в список выполненных")
+        XCTAssertFalse(passTask.isSelected)
     }
 }

@@ -15,12 +15,6 @@ enum AddNewTask {
         case title
         /// Поле ввода локации
         case location
-        // Кнопка выбора низкого приоритета задачи
-        case segmented_control_low_priority
-        /// Кнопка выбора среднего приоритета задачи
-        case segmented_control_medium_priority
-        /// Кнопка выбора высокого приоритета задачи
-        case segmented_control_high_priority
         /// Поле ввода описания задачи
         case description
         // Дата-пикер задачи
@@ -29,6 +23,10 @@ enum AddNewTask {
         case back
         /// Поле ввода даты
         case date
+        // Кнопка открытия дата-пикера
+        case myDate
+        // Кнопка выбора приоритета задачи
+        case priority
 
     }
 
@@ -38,20 +36,19 @@ enum AddNewTask {
             return XCUIApplication().textFields[AccessibilityIDs.AddNewTask.title]
         case .location:
             return XCUIApplication().textFields[AccessibilityIDs.AddNewTask.location]
-        case .segmented_control_high_priority:
-            return XCUIApplication().buttons[AccessibilityIDs.AddNewTask.segmented_control_high_priority]
-        case .segmented_control_medium_priority:
-            return XCUIApplication().buttons[AccessibilityIDs.AddNewTask.segmented_control_medium_priority]
-        case .segmented_control_low_priority:
-            return XCUIApplication().buttons[AccessibilityIDs.AddNewTask.segmented_control_low_priority]
         case .description:
-            return XCUIApplication().textFields[AccessibilityIDs.AddNewTask.description]
+            return XCUIApplication().textViews[AccessibilityIDs.AddNewTask.description]
         case .datepicker:
             return XCUIApplication().datePickers[AccessibilityIDs.AddNewTask.datepicker]
         case .back:
             return XCUIApplication().buttons[AccessibilityIDs.AddNewTask.back]
         case .date:
             return XCUIApplication().textFields[AccessibilityIDs.AddNewTask.date]
+        case .myDate:
+            return XCUIApplication().datePickers[AccessibilityIDs.AddNewTask.myDate]
+        case .priority:
+            return XCUIApplication().segmentedControls[AccessibilityIDs.AddNewTask.priority]
+        
         }
     }
 }

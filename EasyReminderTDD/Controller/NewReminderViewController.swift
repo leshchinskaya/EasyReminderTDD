@@ -103,6 +103,12 @@ class NewReminderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        datePicker.accessibilityIdentifier = "myDate"
+        
+        segmentedControl.accessibilityIdentifier = "priority"
+        
+        descripTextView.accessibilityIdentifier =   "description"
 
         // Do any additional setup after loading the view.
         //navigationController?.navigationBar.prefersLargeTitles = false
@@ -130,5 +136,5 @@ class NewReminderViewController: UIViewController {
     
     // MARK: - CoreData
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    
 }

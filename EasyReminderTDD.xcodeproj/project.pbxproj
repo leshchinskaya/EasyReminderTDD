@@ -14,6 +14,8 @@
 		9A3EA6222A30BD560010DC80 /* AddNewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5D22A30B51A0010DC80 /* AddNewTask.swift */; };
 		9A3EA63E2A30BFEF0010DC80 /* Smoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5D72A30B88E0010DC80 /* Smoke.swift */; };
 		9A3EA6452A30C10E0010DC80 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5CA2A30B50B0010DC80 /* Main.swift */; };
+		9A43C1662A31A317005AD11A /* NewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E88341FEEB36700B7F879 /* NewReminderViewController.swift */; };
+		9A43C16F2A31D699005AD11A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A43C16E2A31D699005AD11A /* Constants.swift */; };
 		CD27FA311FEEADFB00414187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA301FEEADFB00414187 /* AppDelegate.swift */; };
 		CD27FA361FEEADFB00414187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD27FA341FEEADFB00414187 /* Main.storyboard */; };
 		CD27FA391FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA371FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld */; };
@@ -23,7 +25,6 @@
 		CD27FA541FEEAE5B00414187 /* ERTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA531FEEAE5B00414187 /* ERTableViewController.swift */; };
 		CD27FA561FEEAEBD00414187 /* UpdateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA551FEEAEBD00414187 /* UpdateReminderViewController.swift */; };
 		CD27FA581FEEAECB00414187 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA571FEEAECB00414187 /* MapViewController.swift */; };
-		CD2E88351FEEB36700B7F879 /* NewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E88341FEEB36700B7F879 /* NewReminderViewController.swift */; };
 		CD2E88381FEEB4E900B7F879 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2E88371FEEB4E900B7F879 /* MapKit.framework */; };
 		CD2E88461FEEDB0000B7F879 /* ERTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E88451FEEDB0000B7F879 /* ERTableViewControllerTests.swift */; };
 		CD71194A20001BD800073EFC /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD71194820001BD800073EFC /* Reminder+CoreDataClass.swift */; };
@@ -63,6 +64,7 @@
 		9A3EA5CA2A30B50B0010DC80 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		9A3EA5D22A30B51A0010DC80 /* AddNewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTask.swift; sourceTree = "<group>"; };
 		9A3EA5D72A30B88E0010DC80 /* Smoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smoke.swift; sourceTree = "<group>"; };
+		9A43C16E2A31D699005AD11A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B5B460056985056051588662 /* Pods-EasyReminderTDDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyReminderTDDTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyReminderTDDTests/Pods-EasyReminderTDDTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD27FA2D1FEEADFB00414187 /* EasyReminderTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyReminderTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD27FA301FEEADFB00414187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		9A3EA5B32A30B45D0010DC80 /* EasyReminderTDDUITests */ = {
 			isa = PBXGroup;
 			children = (
+				9A43C16D2A31D673005AD11A /* Constant */,
 				9A3EA5C92A30B4F30010DC80 /* Screen */,
 				9A3EA5C82A30B4E80010DC80 /* Tests */,
 				9A3EA5B42A30B45D0010DC80 /* EasyReminderTDDUITests.swift */,
@@ -151,6 +154,14 @@
 				9A3EA5D22A30B51A0010DC80 /* AddNewTask.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		9A43C16D2A31D673005AD11A /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				9A43C16E2A31D699005AD11A /* Constants.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 		CD27FA241FEEADFB00414187 = {
@@ -497,6 +508,7 @@
 				9A3EA63E2A30BFEF0010DC80 /* Smoke.swift in Sources */,
 				9A3EA5B52A30B45D0010DC80 /* EasyReminderTDDUITests.swift in Sources */,
 				9A3EA6222A30BD560010DC80 /* AddNewTask.swift in Sources */,
+				9A43C16F2A31D699005AD11A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,13 +517,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD27FA391FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld in Sources */,
-				CD2E88351FEEB36700B7F879 /* NewReminderViewController.swift in Sources */,
 				CD27FA561FEEAEBD00414187 /* UpdateReminderViewController.swift in Sources */,
 				CD27FA311FEEADFB00414187 /* AppDelegate.swift in Sources */,
 				CD71194A20001BD800073EFC /* Reminder+CoreDataClass.swift in Sources */,
 				CD27FA581FEEAECB00414187 /* MapViewController.swift in Sources */,
 				CDE6727E20055E2100F0FAE7 /* CustomTableViewCell.swift in Sources */,
 				CDE672722003E93600F0FAE7 /* CoreDataManager.swift in Sources */,
+				9A43C1662A31A317005AD11A /* NewReminderViewController.swift in Sources */,
 				CD27FA541FEEAE5B00414187 /* ERTableViewController.swift in Sources */,
 				CD71194B20001BD800073EFC /* Reminder+CoreDataProperties.swift in Sources */,
 			);
