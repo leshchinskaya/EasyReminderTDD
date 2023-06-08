@@ -23,3 +23,4 @@ let save = app.navigationBars["EasyReminderTDD.NewReminderView"].buttons["Easy R
 
 // Чек-бокс созданной задачи
 let passTask = XCUIApplication().tables/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Тест")/*[[".cells.containing(.staticText, identifier:\"06-09-2023\")",".cells.containing(.staticText, identifier:\"Тест\")"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.otherElements["CheckId"]
+

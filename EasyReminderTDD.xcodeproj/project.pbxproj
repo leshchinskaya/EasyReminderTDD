@@ -12,14 +12,17 @@
 		9A3EA5B52A30B45D0010DC80 /* EasyReminderTDDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5B42A30B45D0010DC80 /* EasyReminderTDDUITests.swift */; };
 		9A3EA5C12A30B4A00010DC80 /* AccessibillityIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5C02A30B4A00010DC80 /* AccessibillityIds.swift */; };
 		9A3EA6222A30BD560010DC80 /* AddNewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5D22A30B51A0010DC80 /* AddNewTask.swift */; };
-		9A3EA63E2A30BFEF0010DC80 /* Smoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5D72A30B88E0010DC80 /* Smoke.swift */; };
 		9A43C16F2A31D699005AD11A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A43C16E2A31D699005AD11A /* Constants.swift */; };
 		9A43C18E2A31F345005AD11A /* NewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E88341FEEB36700B7F879 /* NewReminderViewController.swift */; };
 		9A43C19F2A31F5BC005AD11A /* ERTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA531FEEAE5B00414187 /* ERTableViewController.swift */; };
 		9A43C1AD2A31F614005AD11A /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5CA2A30B50B0010DC80 /* Main.swift */; };
-		9AA6EF6D2A31FCF4008F5633 /* AccessibillityIDs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA6EF642A31FCF4008F5633 /* AccessibillityIDs.framework */; };
-		9AA6EF792A31FCF4008F5633 /* AccessibillityIDs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA6EF642A31FCF4008F5633 /* AccessibillityIDs.framework */; };
-		9AA6EF7A2A31FCF4008F5633 /* AccessibillityIDs.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA6EF642A31FCF4008F5633 /* AccessibillityIDs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9AA6EFFB2A3210D0008F5633 /* Smoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5D72A30B88E0010DC80 /* Smoke.swift */; };
+		9AA6F0122A321146008F5633 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A3EA5B62A30B45D0010DC80 /* Info.plist */; };
+		9AA6F0272A321235008F5633 /* EasyReminderTDDTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = CD27FA441FEEADFC00414187 /* EasyReminderTDDTests.xctest */; };
+		9AA6F02C2A321238008F5633 /* EasyReminderTDD.app in Resources */ = {isa = PBXBuildFile; fileRef = CD27FA2D1FEEADFB00414187 /* EasyReminderTDD.app */; };
+		9AA6F0312A32124E008F5633 /* AccessibillityIDsTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6EF6C2A31FCF4008F5633 /* AccessibillityIDsTests.xctest */; };
+		9AA6F0322A321254008F5633 /* AccessibillityIDs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA6EF642A31FCF4008F5633 /* AccessibillityIDs.framework */; };
+		9AA6F0372A3212A2008F5633 /* EasyReminderTDDUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 9A3EA5B22A30B45D0010DC80 /* EasyReminderTDDUITests.xctest */; };
 		CD27FA311FEEADFB00414187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA301FEEADFB00414187 /* AppDelegate.swift */; };
 		CD27FA361FEEADFB00414187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD27FA341FEEADFB00414187 /* Main.storyboard */; };
 		CD27FA391FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA371FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld */; };
@@ -83,7 +86,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9AA6EF7A2A31FCF4008F5633 /* AccessibillityIDs.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,7 +152,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AA6EF6D2A31FCF4008F5633 /* AccessibillityIDs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +161,7 @@
 			files = (
 				CD2E88381FEEB4E900B7F879 /* MapKit.framework in Frameworks */,
 				459EBC0D0E88F1AA2ADE6D55 /* Pods_EasyReminderTDD.framework in Frameworks */,
-				9AA6EF792A31FCF4008F5633 /* AccessibillityIDs.framework in Frameworks */,
+				9AA6F0322A321254008F5633 /* AccessibillityIDs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +179,7 @@
 		9A3EA5B32A30B45D0010DC80 /* EasyReminderTDDUITests */ = {
 			isa = PBXGroup;
 			children = (
+				9A3EA5BF2A30B47E0010DC80 /* AccessibillityIds */,
 				9A43C16D2A31D673005AD11A /* Constant */,
 				9A3EA5C92A30B4F30010DC80 /* Screen */,
 				9A3EA5C82A30B4E80010DC80 /* Tests */,
@@ -223,7 +225,6 @@
 		CD27FA241FEEADFB00414187 = {
 			isa = PBXGroup;
 			children = (
-				9A3EA5BF2A30B47E0010DC80 /* AccessibillityIds */,
 				CD27FA2F1FEEADFB00414187 /* EasyReminderTDD */,
 				CD27FA471FEEADFC00414187 /* EasyReminderTDDTests */,
 				9A3EA5B32A30B45D0010DC80 /* EasyReminderTDDUITests */,
@@ -508,6 +509,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA6F0122A321146008F5633 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,9 +524,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA6F02C2A321238008F5633 /* EasyReminderTDD.app in Resources */,
+				9AA6F0372A3212A2008F5633 /* EasyReminderTDDUITests.xctest in Resources */,
+				9AA6F0312A32124E008F5633 /* AccessibillityIDsTests.xctest in Resources */,
 				CD27FA3E1FEEADFC00414187 /* LaunchScreen.storyboard in Resources */,
 				CD27FA3B1FEEADFC00414187 /* Assets.xcassets in Resources */,
 				CD27FA361FEEADFB00414187 /* Main.storyboard in Resources */,
+				9AA6F0272A321235008F5633 /* EasyReminderTDDTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,8 +642,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A43C1AD2A31F614005AD11A /* Main.swift in Sources */,
+				9AA6EFFB2A3210D0008F5633 /* Smoke.swift in Sources */,
 				9A3EA5C12A30B4A00010DC80 /* AccessibillityIds.swift in Sources */,
-				9A3EA63E2A30BFEF0010DC80 /* Smoke.swift in Sources */,
 				9A3EA5B52A30B45D0010DC80 /* EasyReminderTDDUITests.swift in Sources */,
 				9A3EA6222A30BD560010DC80 /* AddNewTask.swift in Sources */,
 				9A43C16F2A31D699005AD11A /* Constants.swift in Sources */,

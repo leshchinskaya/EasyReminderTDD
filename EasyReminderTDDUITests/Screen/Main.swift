@@ -20,7 +20,6 @@ enum Main {
         /// Поле с датой задачи
         case datelabel
     }
-
     static func get(_ element: Element) -> XCUIElement {
         switch element {
         case .addButton:
