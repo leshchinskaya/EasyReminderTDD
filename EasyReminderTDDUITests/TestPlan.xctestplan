@@ -1,0 +1,41 @@
+{
+  "configurations" : [
+    {
+      "id" : "43EBECDF-F605-4930-AFD7-1B385F2D910F",
+      "name" : "Configuration 1",
+      "options" : {
+        "locationScenario" : {
+          "identifier" : "Hong Kong, China",
+          "referenceType" : "built-in"
+        }
+      }
+    },
+    {
+      "id" : "9ED13883-AE98-41E6-82E8-259E27021FC1",
+      "name" : "Configuration 2",
+      "options" : {
+        "locationScenario" : {
+          "identifier" : "New York, NY, USA",
+          "referenceType" : "built-in"
+        }
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "EasyReminderTDDUITests\/testExample()",
+        "EasyReminderTDDUITestsLaunchTests\/testLaunch()"
+      ],
+      "target" : {
+        "containerPath" : "container:EasyReminderTDD.xcodeproj",
+        "identifier" : "5BDDB14C2A3226A40051C17B",
+        "name" : "EasyReminderTDDUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

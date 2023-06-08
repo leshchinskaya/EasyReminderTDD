@@ -106,6 +106,9 @@ class NewReminderViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         //navigationController?.navigationBar.prefersLargeTitles = false
+        
+        titleTextField.accessibilityIdentifier = "titleTextField"
+        descripTextView.accessibilityIdentifier = "descripTextView"
     }
 
     override func didReceiveMemoryWarning() {

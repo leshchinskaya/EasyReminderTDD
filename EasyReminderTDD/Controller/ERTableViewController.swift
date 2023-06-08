@@ -14,6 +14,7 @@ class ERTableViewController: UITableViewController {
     
     @IBOutlet weak var showClosedButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var addButton: UIBarButtonItem!
     
     let dateFormatter = DateFormatter()
     let searchController = UISearchController(searchResultsController: nil)
@@ -110,6 +111,10 @@ class ERTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        filterButton.accessibilityIdentifier = "filterButton"
+        addButton.accessibilityIdentifier = "addButton"
+        tableView.accessibilityIdentifier = "tableView"
     }
     
     override func viewWillAppear(_ animated: Bool) {
