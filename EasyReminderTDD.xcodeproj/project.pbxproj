@@ -13,16 +13,19 @@
 		9A3EA5C12A30B4A00010DC80 /* AccessibillityIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5C02A30B4A00010DC80 /* AccessibillityIds.swift */; };
 		9A3EA6222A30BD560010DC80 /* AddNewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5D22A30B51A0010DC80 /* AddNewTask.swift */; };
 		9A3EA63E2A30BFEF0010DC80 /* Smoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5D72A30B88E0010DC80 /* Smoke.swift */; };
-		9A3EA6452A30C10E0010DC80 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5CA2A30B50B0010DC80 /* Main.swift */; };
-		9A43C1662A31A317005AD11A /* NewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E88341FEEB36700B7F879 /* NewReminderViewController.swift */; };
 		9A43C16F2A31D699005AD11A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A43C16E2A31D699005AD11A /* Constants.swift */; };
+		9A43C18E2A31F345005AD11A /* NewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E88341FEEB36700B7F879 /* NewReminderViewController.swift */; };
+		9A43C19F2A31F5BC005AD11A /* ERTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA531FEEAE5B00414187 /* ERTableViewController.swift */; };
+		9A43C1AD2A31F614005AD11A /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA5CA2A30B50B0010DC80 /* Main.swift */; };
+		9AA6EF6D2A31FCF4008F5633 /* AccessibillityIDs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA6EF642A31FCF4008F5633 /* AccessibillityIDs.framework */; };
+		9AA6EF792A31FCF4008F5633 /* AccessibillityIDs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA6EF642A31FCF4008F5633 /* AccessibillityIDs.framework */; };
+		9AA6EF7A2A31FCF4008F5633 /* AccessibillityIDs.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA6EF642A31FCF4008F5633 /* AccessibillityIDs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD27FA311FEEADFB00414187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA301FEEADFB00414187 /* AppDelegate.swift */; };
 		CD27FA361FEEADFB00414187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD27FA341FEEADFB00414187 /* Main.storyboard */; };
 		CD27FA391FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA371FEEADFB00414187 /* EasyReminderTDD.xcdatamodeld */; };
 		CD27FA3B1FEEADFC00414187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD27FA3A1FEEADFC00414187 /* Assets.xcassets */; };
 		CD27FA3E1FEEADFC00414187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD27FA3C1FEEADFC00414187 /* LaunchScreen.storyboard */; };
 		CD27FA491FEEADFC00414187 /* EasyReminderTDDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA481FEEADFC00414187 /* EasyReminderTDDTests.swift */; };
-		CD27FA541FEEAE5B00414187 /* ERTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA531FEEAE5B00414187 /* ERTableViewController.swift */; };
 		CD27FA561FEEAEBD00414187 /* UpdateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA551FEEAEBD00414187 /* UpdateReminderViewController.swift */; };
 		CD27FA581FEEAECB00414187 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD27FA571FEEAECB00414187 /* MapViewController.swift */; };
 		CD2E88381FEEB4E900B7F879 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2E88371FEEB4E900B7F879 /* MapKit.framework */; };
@@ -43,6 +46,27 @@
 			remoteGlobalIDString = CD27FA2C1FEEADFB00414187;
 			remoteInfo = EasyReminderTDD;
 		};
+		9AA6EF6E2A31FCF4008F5633 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD27FA251FEEADFB00414187 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AA6EF632A31FCF4008F5633;
+			remoteInfo = AccessibillityIDs;
+		};
+		9AA6EF702A31FCF4008F5633 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD27FA251FEEADFB00414187 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD27FA2C1FEEADFB00414187;
+			remoteInfo = EasyReminderTDD;
+		};
+		9AA6EF772A31FCF4008F5633 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD27FA251FEEADFB00414187 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AA6EF632A31FCF4008F5633;
+			remoteInfo = AccessibillityIDs;
+		};
 		CD27FA451FEEADFC00414187 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CD27FA251FEEADFB00414187 /* Project object */;
@@ -51,6 +75,20 @@
 			remoteInfo = EasyReminderTDD;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9AA6EF7B2A31FCF4008F5633 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9AA6EF7A2A31FCF4008F5633 /* AccessibillityIDs.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6F71CCCA27EA45DE2C1CD04D /* Pods-EasyReminderTDDTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyReminderTDDTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyReminderTDDTests/Pods-EasyReminderTDDTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +103,8 @@
 		9A3EA5D22A30B51A0010DC80 /* AddNewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTask.swift; sourceTree = "<group>"; };
 		9A3EA5D72A30B88E0010DC80 /* Smoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smoke.swift; sourceTree = "<group>"; };
 		9A43C16E2A31D699005AD11A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9AA6EF642A31FCF4008F5633 /* AccessibillityIDs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AccessibillityIDs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA6EF6C2A31FCF4008F5633 /* AccessibillityIDsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccessibillityIDsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B460056985056051588662 /* Pods-EasyReminderTDDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyReminderTDDTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyReminderTDDTests/Pods-EasyReminderTDDTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD27FA2D1FEEADFB00414187 /* EasyReminderTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyReminderTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD27FA301FEEADFB00414187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,12 +139,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9AA6EF612A31FCF4008F5633 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AA6EF692A31FCF4008F5633 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AA6EF6D2A31FCF4008F5633 /* AccessibillityIDs.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CD27FA2A1FEEADFB00414187 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CD2E88381FEEB4E900B7F879 /* MapKit.framework in Frameworks */,
 				459EBC0D0E88F1AA2ADE6D55 /* Pods_EasyReminderTDD.framework in Frameworks */,
+				9AA6EF792A31FCF4008F5633 /* AccessibillityIDs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +239,8 @@
 				CD27FA2D1FEEADFB00414187 /* EasyReminderTDD.app */,
 				CD27FA441FEEADFC00414187 /* EasyReminderTDDTests.xctest */,
 				9A3EA5B22A30B45D0010DC80 /* EasyReminderTDDUITests.xctest */,
+				9AA6EF642A31FCF4008F5633 /* AccessibillityIDs.framework */,
+				9AA6EF6C2A31FCF4008F5633 /* AccessibillityIDsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,6 +325,16 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		9AA6EF5F2A31FCF4008F5633 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		9A3EA5B12A30B45D0010DC80 /* EasyReminderTDDUITests */ = {
 			isa = PBXNativeTarget;
@@ -286,6 +354,43 @@
 			productReference = 9A3EA5B22A30B45D0010DC80 /* EasyReminderTDDUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		9AA6EF632A31FCF4008F5633 /* AccessibillityIDs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AA6EF802A31FCF4008F5633 /* Build configuration list for PBXNativeTarget "AccessibillityIDs" */;
+			buildPhases = (
+				9AA6EF5F2A31FCF4008F5633 /* Headers */,
+				9AA6EF602A31FCF4008F5633 /* Sources */,
+				9AA6EF612A31FCF4008F5633 /* Frameworks */,
+				9AA6EF622A31FCF4008F5633 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AccessibillityIDs;
+			productName = AccessibillityIDs;
+			productReference = 9AA6EF642A31FCF4008F5633 /* AccessibillityIDs.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9AA6EF6B2A31FCF4008F5633 /* AccessibillityIDsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AA6EF812A31FCF4008F5633 /* Build configuration list for PBXNativeTarget "AccessibillityIDsTests" */;
+			buildPhases = (
+				9AA6EF682A31FCF4008F5633 /* Sources */,
+				9AA6EF692A31FCF4008F5633 /* Frameworks */,
+				9AA6EF6A2A31FCF4008F5633 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9AA6EF6F2A31FCF4008F5633 /* PBXTargetDependency */,
+				9AA6EF712A31FCF4008F5633 /* PBXTargetDependency */,
+			);
+			name = AccessibillityIDsTests;
+			productName = AccessibillityIDsTests;
+			productReference = 9AA6EF6C2A31FCF4008F5633 /* AccessibillityIDsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CD27FA2C1FEEADFB00414187 /* EasyReminderTDD */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD27FA4D1FEEADFC00414187 /* Build configuration list for PBXNativeTarget "EasyReminderTDD" */;
@@ -296,10 +401,12 @@
 				CD27FA2B1FEEADFB00414187 /* Resources */,
 				9D3D00C89767DB08BF5D6036 /* [CP] Embed Pods Frameworks */,
 				7A6BEE6A221EB46F07296878 /* [CP] Copy Pods Resources */,
+				9AA6EF7B2A31FCF4008F5633 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9AA6EF782A31FCF4008F5633 /* PBXTargetDependency */,
 			);
 			name = EasyReminderTDD;
 			productName = EasyReminderTDD;
@@ -342,6 +449,15 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = CD27FA2C1FEEADFB00414187;
 					};
+					9AA6EF632A31FCF4008F5633 = {
+						CreatedOnToolsVersion = 12.4;
+						ProvisioningStyle = Automatic;
+					};
+					9AA6EF6B2A31FCF4008F5633 = {
+						CreatedOnToolsVersion = 12.4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CD27FA2C1FEEADFB00414187;
+					};
 					CD27FA2C1FEEADFB00414187 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -374,12 +490,28 @@
 				CD27FA2C1FEEADFB00414187 /* EasyReminderTDD */,
 				CD27FA431FEEADFC00414187 /* EasyReminderTDDTests */,
 				9A3EA5B12A30B45D0010DC80 /* EasyReminderTDDUITests */,
+				9AA6EF632A31FCF4008F5633 /* AccessibillityIDs */,
+				9AA6EF6B2A31FCF4008F5633 /* AccessibillityIDsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9A3EA5B02A30B45D0010DC80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AA6EF622A31FCF4008F5633 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AA6EF6A2A31FCF4008F5633 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -503,12 +635,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A3EA6452A30C10E0010DC80 /* Main.swift in Sources */,
+				9A43C1AD2A31F614005AD11A /* Main.swift in Sources */,
 				9A3EA5C12A30B4A00010DC80 /* AccessibillityIds.swift in Sources */,
 				9A3EA63E2A30BFEF0010DC80 /* Smoke.swift in Sources */,
 				9A3EA5B52A30B45D0010DC80 /* EasyReminderTDDUITests.swift in Sources */,
 				9A3EA6222A30BD560010DC80 /* AddNewTask.swift in Sources */,
 				9A43C16F2A31D699005AD11A /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AA6EF602A31FCF4008F5633 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AA6EF682A31FCF4008F5633 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,9 +668,9 @@
 				CD71194A20001BD800073EFC /* Reminder+CoreDataClass.swift in Sources */,
 				CD27FA581FEEAECB00414187 /* MapViewController.swift in Sources */,
 				CDE6727E20055E2100F0FAE7 /* CustomTableViewCell.swift in Sources */,
+				9A43C19F2A31F5BC005AD11A /* ERTableViewController.swift in Sources */,
 				CDE672722003E93600F0FAE7 /* CoreDataManager.swift in Sources */,
-				9A43C1662A31A317005AD11A /* NewReminderViewController.swift in Sources */,
-				CD27FA541FEEAE5B00414187 /* ERTableViewController.swift in Sources */,
+				9A43C18E2A31F345005AD11A /* NewReminderViewController.swift in Sources */,
 				CD71194B20001BD800073EFC /* Reminder+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +693,21 @@
 			isa = PBXTargetDependency;
 			target = CD27FA2C1FEEADFB00414187 /* EasyReminderTDD */;
 			targetProxy = 9A3EA5B72A30B45D0010DC80 /* PBXContainerItemProxy */;
+		};
+		9AA6EF6F2A31FCF4008F5633 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9AA6EF632A31FCF4008F5633 /* AccessibillityIDs */;
+			targetProxy = 9AA6EF6E2A31FCF4008F5633 /* PBXContainerItemProxy */;
+		};
+		9AA6EF712A31FCF4008F5633 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD27FA2C1FEEADFB00414187 /* EasyReminderTDD */;
+			targetProxy = 9AA6EF702A31FCF4008F5633 /* PBXContainerItemProxy */;
+		};
+		9AA6EF782A31FCF4008F5633 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9AA6EF632A31FCF4008F5633 /* AccessibillityIDs */;
+			targetProxy = 9AA6EF772A31FCF4008F5633 /* PBXContainerItemProxy */;
 		};
 		CD27FA461FEEADFC00414187 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -613,6 +774,106 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = EasyReminderTDD;
+			};
+			name = Release;
+		};
+		9AA6EF7C2A31FCF4008F5633 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 77PLT8T8S2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AccessibillityIDs/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.AccessibillityIDs";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9AA6EF7D2A31FCF4008F5633 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 77PLT8T8S2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AccessibillityIDs/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.AccessibillityIDs";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9AA6EF7E2A31FCF4008F5633 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AccessibillityIDsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.AccessibillityIDsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyReminderTDD.app/EasyReminderTDD";
+			};
+			name = Debug;
+		};
+		9AA6EF7F2A31FCF4008F5633 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AccessibillityIDsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.AccessibillityIDsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyReminderTDD.app/EasyReminderTDD";
 			};
 			name = Release;
 		};
@@ -801,6 +1062,24 @@
 			buildConfigurations = (
 				9A3EA5B92A30B45D0010DC80 /* Debug */,
 				9A3EA5BA2A30B45D0010DC80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AA6EF802A31FCF4008F5633 /* Build configuration list for PBXNativeTarget "AccessibillityIDs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AA6EF7C2A31FCF4008F5633 /* Debug */,
+				9AA6EF7D2A31FCF4008F5633 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AA6EF812A31FCF4008F5633 /* Build configuration list for PBXNativeTarget "AccessibillityIDsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AA6EF7E2A31FCF4008F5633 /* Debug */,
+				9AA6EF7F2A31FCF4008F5633 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

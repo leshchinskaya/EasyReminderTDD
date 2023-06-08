@@ -26,7 +26,7 @@ class SmokeTest: XCTestCase {
         }
     
     func testSmoke() throws {
-        
+    
         /// Тап по кнопке “Add” -> Переход на экран создания задачи
         Main.get(.addButton).tap()
         XCTAssertTrue(XCUIApplication().textFields[AccessibilityIDs.AddNewTask.title].exists)

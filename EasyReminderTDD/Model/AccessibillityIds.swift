@@ -1,10 +1,12 @@
 //
 //  AccessibillityIds.swift
-//  EasyReminderTDDUITests
+//  EasyReminderTDD
 //
-//  Created by pozhidaev on 07.06.2023.
+//  Created by pozhidaev on 08.06.2023.
 //  Copyright © 2023 Mariya. All rights reserved.
 //
+
+import UIKit
 import Foundation
 import XCTest
 
@@ -13,7 +15,8 @@ let app = XCUIApplication()
 public let datePicker = XCUIApplication()/*@START_MENU_TOKEN@*/.datePickers/*[[".otherElements[\"Preview\"].datePickers",".datePickers"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
 
 public let backs = app.navigationBars["EasyReminderTDD.NewReminderView"].buttons["Easy Reminder"]
-    
+
+class AccessibillityIds: NSObject {
     public enum AccessibilityIDs {
         
         public enum Main {
@@ -44,6 +47,6 @@ public let backs = app.navigationBars["EasyReminderTDD.NewReminderView"].buttons
             public static let myDate = "myDate"
             
             public static let priority = "priority"
-    }        
+    }
 }
-    
+}
