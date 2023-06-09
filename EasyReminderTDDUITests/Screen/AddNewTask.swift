@@ -17,17 +17,18 @@ enum AddNewTask {
         case location
         /// Поле ввода описания задачи
         case description
-        // Дата-пикер задачи
-        case datepicker
         /// Кнопка назад  < для перехода на главный экран
         case back
         /// Поле ввода даты
         case date
-        // Кнопка открытия дата-пикера
+        /// Кнопка открытия дата-пикера
         case myDate
-        // Кнопка выбора приоритета задачи
+        /// Кнопка выбора приоритета задачи
         case priority
-
+        /// Выбор даты в календаре
+        case choiseDate
+        /// Чек-бокс созданной задачи
+        case passTask
     }
 
     static func get(_ element: Element) -> XCUIElement {
@@ -38,17 +39,18 @@ enum AddNewTask {
             return XCUIApplication().textFields[AccessibilityIDs.AddNewTask.location]
         case .description:
             return XCUIApplication().textViews[AccessibilityIDs.AddNewTask.description]
-        case .datepicker:
-            return XCUIApplication().datePickers[AccessibilityIDs.AddNewTask.datepicker]
         case .back:
-            return XCUIApplication().buttons[AccessibilityIDs.AddNewTask.back]
+            return XCUIApplication().navigationBars["EasyReminderTDD.NewReminderView"].buttons["Easy Reminder"]
         case .date:
             return XCUIApplication().textFields[AccessibilityIDs.AddNewTask.date]
         case .myDate:
             return XCUIApplication().datePickers[AccessibilityIDs.AddNewTask.myDate]
         case .priority:
             return XCUIApplication().segmentedControls[AccessibilityIDs.AddNewTask.priority]
-        
+        case .choiseDate:
+            return XCUIApplication()/*@START_MENU_TOKEN@*/.datePickers/*[[".otherElements[\"Preview\"].datePickers",".datePickers"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.collectionViews.buttons["Saturday, June 10"].otherElements.containing(.staticText, identifier:"10").element
+        case .passTask:
+            return XCUIApplication().tables.cells.containing(.staticText, identifier:"Тест").otherElements["CheckId"]
         }
     }
 }

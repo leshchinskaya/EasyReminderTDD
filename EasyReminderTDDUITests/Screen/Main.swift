@@ -15,7 +15,7 @@ enum Main {
         case addButton
         /// Кнопка для перехода на экран с выполенными задачами
         case showClosedButton
-        // Чек-бокс закрытия задачи
+        /// Чек-бокс закрытия задачи
         case checkBox
         /// Поле с датой задачи
         case datelabel

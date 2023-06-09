@@ -71,6 +71,7 @@ class NewReminderViewController: UIViewController {
         newLocation = locationTextField.text ?? ""
         newDate = dateFormatter.date(from: dateTextField.text ?? "")
         
+        
         if (newTitle=="" || newDescrip=="") {
             print("error: title == nil or descrip == nil")
         }
@@ -103,13 +104,9 @@ class NewReminderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         datePicker.accessibilityIdentifier = "myDate"
-        
         segmentedControl.accessibilityIdentifier = "priority"
-        
         descripTextView.accessibilityIdentifier =   "description"
-
         // Do any additional setup after loading the view.
         //navigationController?.navigationBar.prefersLargeTitles = false
     }
