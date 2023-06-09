@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-enum Main {
+enum MainScreen {
     enum Element {
         /// Кнопка Add для перехода на экран создания задачи
         case addButton

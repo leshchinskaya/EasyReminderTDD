@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-enum AddNewTask {
+enum AddNewTaskScreen {
     enum Element {
         /// Поле ввода названия задачи
         case title
@@ -48,7 +48,7 @@ enum AddNewTask {
         case .priority:
             return XCUIApplication().segmentedControls[AccessibilityIDs.AddNewTask.priority]
         case .choiseDate:
-            return XCUIApplication()/*@START_MENU_TOKEN@*/.datePickers/*[[".otherElements[\"Preview\"].datePickers",".datePickers"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.collectionViews.buttons["Saturday, June 10"].otherElements.containing(.staticText, identifier:"10").element
+            return XCUIApplication().datePickers.collectionViews.buttons[Constants.Date.tomorrowDate].otherElements.containing(.staticText, identifier:Constants.Date.tomorrowDateId).element
         case .passTask:
             return XCUIApplication().tables.cells.containing(.staticText, identifier:"Тест").otherElements["CheckId"]
         }
