@@ -30,6 +30,7 @@ enum ERTableScreen {
     }
     
     static func tap(_ element: Element) {
+        XCTAssert(get(element).waitForExistence(timeout: 0.5))
         get(element).tap()
     }
 }
