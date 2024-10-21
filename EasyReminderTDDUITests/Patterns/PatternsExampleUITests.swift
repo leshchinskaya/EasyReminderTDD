@@ -77,4 +77,12 @@ final class PatternsExample: XCTestCase {
             reminderPage.addReminder("Buy coffee")
         }
     }
+    
+    func test3POMInfluentFactory() throws {
+        app.launch()
+        let reminderPage = Page3Factory.createReminderPage(app: app)
+        reminderPage.tapAddButton()
+                   .enterTitle("Buy coffee")
+                   .tapSaveButton()
+    }
 }
