@@ -50,4 +50,31 @@ final class PatternsExample: XCTestCase {
         reminderPage.enterReminderTitle("Buy coffee")
         reminderPage.tapBackButton()
     }
+    
+    func testCommand() throws {
+        app.launch()
+        let addReminder = AddReminderCommand(app: app, title: "Buy coffee")
+        addReminder.execute()
+    }
+    
+    func testStrategy() throws {
+        app.launch()
+        let inputStrategy: InputStrategy = SimpleInputStrategy(app: app)
+        inputStrategy.openDetailReminder()
+        inputStrategy.inputReminderTitle("Buy coffee")
+    }
+    
+    func testFactory() throws {
+        app.launch()
+        let reminderPage = PageFactory.createReminderPage(app: app)
+        reminderPage.addReminder("Buy coffee")
+    }
+    
+    func testLoadable() throws {
+        app.launch()
+        let reminderPage = ReminderLoadablePage(app: app)
+        if reminderPage.isLoaded() {
+            reminderPage.addReminder("Buy coffee")
+        }
+    }
 }
