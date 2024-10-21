@@ -13,26 +13,14 @@ protocol Task {
 }
 
 class Actor {
-    private let app: XCUIApplication
-    
+    let app: XCUIApplication
+
     init(app: XCUIApplication) {
         self.app = app
     }
-    
+
     func attemptsTo(_ task: Task) {
         task.performAs(actor: self)
-    }
-    
-    var addReminderButton: XCUIElement {
-        return app.buttons["addButton"]
-    }
-    
-    var reminderTitleField: XCUIElement {
-        return app.textFields["titleTextField"]
-    }
-
-    var backButton: XCUIElement {
-        return app.navigationBars.firstMatch.buttons.firstMatch
     }
 }
 
@@ -44,9 +32,12 @@ class AddReminder: Task {
     }
 
     func performAs(actor: Actor) {
-        actor.addReminderButton.tap()
-        actor.reminderTitleField.tap()
-        actor.reminderTitleField.typeText(title)
-        actor.backButton.tap()
+        let reminderScreen = ReminderScreen(app: actor.app)
+        reminderScreen.addReminderButton.tap()
+        reminderScreen.reminderTitleField.tap()
+        reminderScreen.reminderTitleField.typeText(title)
+        reminderScreen.backButton.tap()
     }
 }
+
+
